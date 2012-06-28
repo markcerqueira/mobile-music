@@ -26,6 +26,8 @@ struct GLvertex3f
         x = y = z = 0;
     }
     
+    GLvertex3f(const GLvertex2f &v);
+    
     GLvertex3f(GLfloat x, GLfloat y, GLfloat z)
     {
         this->x = x;

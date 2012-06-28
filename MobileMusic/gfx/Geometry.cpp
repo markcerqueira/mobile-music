@@ -9,6 +9,14 @@
 #include "Geometry.h"
 #include <stdio.h>
 
+
+GLvertex3f::GLvertex3f(const GLvertex2f &v)
+{
+    x = v.x;
+    y = v.y;
+    z = 0;
+}
+
 GLvertex2f GLvertex3f::toLatLong()
 {
     GLvertex2f ll;

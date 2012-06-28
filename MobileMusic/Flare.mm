@@ -11,6 +11,8 @@
 #import "Texture.h"
 
 
+GLuint Flare::tex = 0;
+
 Flare::Flare()
 {
     t = 0;
@@ -30,8 +32,11 @@ void Flare::init()
 {
     t = 0;
     
-    glEnable(GL_TEXTURE_2D);
-    tex = loadTexture(@"flare.png");
+    if(tex == 0)
+    {
+        glEnable(GL_TEXTURE_2D);
+        tex = loadTexture(@"flare.png");
+    }
     
     float r = 0.5;
     
@@ -63,7 +68,7 @@ void Flare::update(float dt)
     
     float f_alpha = f_scale;
     GLcolor4f c = square[0].color;
-    c.a = 1 + 0.5*cosf(2*M_PI*t*f_alpha);
+    c.a = 1 + 0.1*sinf(2*M_PI*t*f_alpha);
     
     square[0].color = square[1].color = square[2].color = square[3].color = c;
 }
@@ -73,10 +78,12 @@ void Flare::render()
 {
     glPushMatrix();
     
+    glTranslatef(loc.x, loc.y, loc.z);
     glScalef(scale, scale, scale);
     
     glEnable(GL_BLEND);
-    glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+    glDisable(GL_DEPTH_TEST);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, tex);
@@ -90,6 +97,8 @@ void Flare::render()
     glColorPointer(4, GL_FLOAT, sizeof(GLgeoprimf), &square[0].color);
     glEnableClientState(GL_COLOR_ARRAY);
     
+    // drawing twice makes a nice over-exposed effect
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
     glPopMatrix();
@@ -97,7 +106,7 @@ void Flare::render()
 
 void Flare::destroy()
 {
-    glDeleteTextures(1, &tex);
+//    if(tex) { glDeleteTextures(1, &tex); tex = 0; }
 }
 
 

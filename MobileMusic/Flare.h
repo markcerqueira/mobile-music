@@ -22,9 +22,13 @@ public:
     void render();
     void destroy();
     
+    void setLocation(GLvertex3f loc) { this->loc = loc; }
+    
 protected:
-    GLuint tex;
+    static GLuint tex;
     GLgeoprimf square[4];
+    
+    GLvertex3f loc;
     float scale;
     float t;
 };
