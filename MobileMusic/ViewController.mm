@@ -7,64 +7,20 @@
 //
 
 #import "ViewController.h"
+#import "Flare.h"
 
 
-GLfloat gCubeVertexData[360] = 
+@interface ViewController ()
 {
-    // Data layout for each line below is:
-    // positionX/Y/Z,          normalX/Y/Z,         colorR/G/B/A
-    0.5f, -0.5f, -0.5f,        1.0f, 0.0f, 0.0f,    1.0f, 0.0f, 0.5f, 1.0f,
-    0.5f, 0.5f, -0.5f,         1.0f, 0.0f, 0.0f,    1.0f, 0.0f, 0.5f, 1.0f,
-    0.5f, -0.5f, 0.5f,         1.0f, 0.0f, 0.0f,    1.0f, 0.0f, 0.5f, 1.0f,
-    0.5f, -0.5f, 0.5f,         1.0f, 0.0f, 0.0f,    1.0f, 0.0f, 0.5f, 1.0f,
-    0.5f, 0.5f, -0.5f,         1.0f, 0.0f, 0.0f,    1.0f, 0.0f, 0.5f, 1.0f,
-    0.5f, 0.5f, 0.5f,          1.0f, 0.0f, 0.0f,    1.0f, 0.0f, 0.5f, 1.0f,
-    
-    0.5f, 0.5f, -0.5f,         0.0f, 1.0f, 0.0f,    0.5f, 1.0f, 0.0f, 1.0f,
-    -0.5f, 0.5f, -0.5f,        0.0f, 1.0f, 0.0f,    0.5f, 1.0f, 0.0f, 1.0f,
-    0.5f, 0.5f, 0.5f,          0.0f, 1.0f, 0.0f,    0.5f, 1.0f, 0.0f, 1.0f,
-    0.5f, 0.5f, 0.5f,          0.0f, 1.0f, 0.0f,    0.5f, 1.0f, 0.0f, 1.0f,
-    -0.5f, 0.5f, -0.5f,        0.0f, 1.0f, 0.0f,    0.5f, 1.0f, 0.0f, 1.0f,
-    -0.5f, 0.5f, 0.5f,         0.0f, 1.0f, 0.0f,    0.5f, 1.0f, 0.0f, 1.0f,
-    
-    -0.5f, 0.5f, -0.5f,        -1.0f, 0.0f, 0.0f,    0.0f, 0.5f, 1.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,       -1.0f, 0.0f, 0.0f,    0.0f, 0.5f, 1.0f, 1.0f,
-    -0.5f, 0.5f, 0.5f,         -1.0f, 0.0f, 0.0f,    0.0f, 0.5f, 1.0f, 1.0f,
-    -0.5f, 0.5f, 0.5f,         -1.0f, 0.0f, 0.0f,    0.0f, 0.5f, 1.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,       -1.0f, 0.0f, 0.0f,    0.0f, 0.5f, 1.0f, 1.0f,
-    -0.5f, -0.5f, 0.5f,        -1.0f, 0.0f, 0.0f,    0.0f, 0.5f, 1.0f, 1.0f,
-    
-    -0.5f, -0.5f, -0.5f,       0.0f, -1.0f, 0.0f,    0.5f, 0.0f, 1.0f, 1.0f,
-    0.5f, -0.5f, -0.5f,        0.0f, -1.0f, 0.0f,    0.5f, 0.0f, 1.0f, 1.0f,
-    -0.5f, -0.5f, 0.5f,        0.0f, -1.0f, 0.0f,    0.5f, 0.0f, 1.0f, 1.0f,
-    -0.5f, -0.5f, 0.5f,        0.0f, -1.0f, 0.0f,    0.5f, 0.0f, 1.0f, 1.0f,
-    0.5f, -0.5f, -0.5f,        0.0f, -1.0f, 0.0f,    0.5f, 0.0f, 1.0f, 1.0f,
-    0.5f, -0.5f, 0.5f,         0.0f, -1.0f, 0.0f,    0.5f, 0.0f, 1.0f, 1.0f,
-    
-    0.5f, 0.5f, 0.5f,          0.0f, 0.0f, 1.0f,    1.0f, 0.5f, 0.0f, 1.0f,
-    -0.5f, 0.5f, 0.5f,         0.0f, 0.0f, 1.0f,    1.0f, 0.5f, 0.0f, 1.0f,
-    0.5f, -0.5f, 0.5f,         0.0f, 0.0f, 1.0f,    1.0f, 0.5f, 0.0f, 1.0f,
-    0.5f, -0.5f, 0.5f,         0.0f, 0.0f, 1.0f,    1.0f, 0.5f, 0.0f, 1.0f,
-    -0.5f, 0.5f, 0.5f,         0.0f, 0.0f, 1.0f,    1.0f, 0.5f, 0.0f, 1.0f,
-    -0.5f, -0.5f, 0.5f,        0.0f, 0.0f, 1.0f,    1.0f, 0.5f, 0.0f, 1.0f,
-    
-    0.5f, -0.5f, -0.5f,        0.0f, 0.0f, -1.0f,    0.0f, 1.0f, 0.5f, 1.0f,
-    -0.5f, -0.5f, -0.5f,       0.0f, 0.0f, -1.0f,    0.0f, 1.0f, 0.5f, 1.0f,
-    0.5f, 0.5f, -0.5f,         0.0f, 0.0f, -1.0f,    0.0f, 1.0f, 0.5f, 1.0f,
-    0.5f, 0.5f, -0.5f,         0.0f, 0.0f, -1.0f,    0.0f, 1.0f, 0.5f, 1.0f,
-    -0.5f, -0.5f, -0.5f,       0.0f, 0.0f, -1.0f,    0.0f, 1.0f, 0.5f, 1.0f,
-    -0.5f, 0.5f, -0.5f,        0.0f, 0.0f, -1.0f,     0.0f, 1.0f, 0.5f, 1.0f,
-};
-
-@interface ViewController () {
-    
     GLKMatrix4 _projectionMatrix;
     GLKMatrix4 _modelviewMatrix;
     float _rotation;
     
-    GLuint _vertexArray;
-    GLuint _vertexBuffer;
+    NSMutableDictionary * flares;
+    
+    Flare * flare1;
 }
+
 @property (strong, nonatomic) EAGLContext *context;
 
 - (void)setupGL;
@@ -91,6 +47,11 @@ GLfloat gCubeVertexData[360] =
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     
     [self setupGL];
+    
+    flare1 = new Flare;
+    flare1->init();
+    
+    flares = [NSMutableDictionary new];
 }
 
 - (void)viewDidUnload
@@ -139,38 +100,45 @@ GLfloat gCubeVertexData[360] =
     float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
     _projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
     
-    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -4.0f);
-    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
-    
-    // Compute the model view matrix for the object rendered with GLKit
-    _modelviewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -1.5f);
-    _modelviewMatrix = GLKMatrix4Rotate(_modelviewMatrix, _rotation, 1.0f, 1.0f, 1.0f);
-    _modelviewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, _modelviewMatrix);
-    
-    _rotation += self.timeSinceLastUpdate * 0.5f;
+    flare1->update(self.timeSinceLastUpdate);
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
+    glClearColor(0, 0, 0, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
     glMatrixMode(GL_PROJECTION);
     glLoadMatrixf(_projectionMatrix.m);
     
     glMatrixMode(GL_MODELVIEW);
-    glLoadMatrixf(_modelviewMatrix.m);
+    glLoadIdentity();
+        
+    glLoadIdentity();
+    glTranslatef(0, 0, -2);
+    flare1->render();
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    for(UITouch * touch in touches)
+    {
+    }
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
     
-    glClearColor(0.65f, 0.65f, 0.65f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
     
-    glVertexPointer(3, GL_FLOAT, 10*sizeof(float), gCubeVertexData);
-    glEnableClientState(GL_VERTEX_ARRAY);
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
     
-    glNormalPointer(GL_FLOAT, 10*sizeof(float), gCubeVertexData+3);
-    glEnableClientState(GL_NORMAL_ARRAY);
-    
-    glColorPointer(4, GL_FLOAT, 10*sizeof(float), gCubeVertexData+6);
-    glEnableClientState(GL_COLOR_ARRAY);
-    
-    glDrawArrays(GL_TRIANGLES, 0, 36);
 }
 
 @end

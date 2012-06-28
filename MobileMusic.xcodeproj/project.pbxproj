@@ -11,6 +11,10 @@
 		09C89BEC159BFEC300C9EFB2 /* MMAudio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09C89BEB159BFEC300C9EFB2 /* MMAudio.mm */; };
 		09C89BF0159BFFF600C9EFB2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89BED159BFFF500C9EFB2 /* AudioToolbox.framework */; };
 		09C89BF2159BFFF600C9EFB2 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89BEF159BFFF500C9EFB2 /* CoreAudio.framework */; };
+		09C89BFD159C070400C9EFB2 /* Geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09C89BF9159C070400C9EFB2 /* Geometry.cpp */; };
+		09C89BFE159C070400C9EFB2 /* Texture.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09C89BFC159C070400C9EFB2 /* Texture.mm */; };
+		09C89C01159C0B5000C9EFB2 /* flare.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C89C00159C0B5000C9EFB2 /* flare.png */; };
+		09C89C0B159D129900C9EFB2 /* Flare.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09C89C0A159D129900C9EFB2 /* Flare.mm */; };
 		4D8DAE3F1592D1C400A6B60C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE3E1592D1C400A6B60C /* UIKit.framework */; };
 		4D8DAE411592D1C400A6B60C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE401592D1C400A6B60C /* Foundation.framework */; };
 		4D8DAE431592D1C400A6B60C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE421592D1C400A6B60C /* CoreGraphics.framework */; };
@@ -32,6 +36,13 @@
 		09C89BEB159BFEC300C9EFB2 /* MMAudio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMAudio.mm; sourceTree = "<group>"; };
 		09C89BED159BFFF500C9EFB2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		09C89BEF159BFFF500C9EFB2 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		09C89BF9159C070400C9EFB2 /* Geometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Geometry.cpp; sourceTree = "<group>"; };
+		09C89BFA159C070400C9EFB2 /* Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geometry.h; sourceTree = "<group>"; };
+		09C89BFB159C070400C9EFB2 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		09C89BFC159C070400C9EFB2 /* Texture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Texture.mm; sourceTree = "<group>"; };
+		09C89C00159C0B5000C9EFB2 /* flare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flare.png; sourceTree = "<group>"; };
+		09C89C0A159D129900C9EFB2 /* Flare.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Flare.mm; sourceTree = "<group>"; };
+		09C89C0C159D12A300C9EFB2 /* Flare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flare.h; sourceTree = "<group>"; };
 		4D8DAE3A1592D1C400A6B60C /* MobileMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8DAE3E1592D1C400A6B60C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D8DAE401592D1C400A6B60C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,6 +89,25 @@
 			path = momu;
 			sourceTree = "<group>";
 		};
+		09C89BF8159C070400C9EFB2 /* gfx */ = {
+			isa = PBXGroup;
+			children = (
+				09C89BFA159C070400C9EFB2 /* Geometry.h */,
+				09C89BF9159C070400C9EFB2 /* Geometry.cpp */,
+				09C89BFB159C070400C9EFB2 /* Texture.h */,
+				09C89BFC159C070400C9EFB2 /* Texture.mm */,
+			);
+			path = gfx;
+			sourceTree = "<group>";
+		};
+		09C89BFF159C0B5000C9EFB2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				09C89C00159C0B5000C9EFB2 /* flare.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		4D8DAE2F1592D1C400A6B60C = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +142,8 @@
 		4D8DAE481592D1C400A6B60C /* MobileMusic */ = {
 			isa = PBXGroup;
 			children = (
+				09C89BFF159C0B5000C9EFB2 /* Resources */,
+				09C89BF8159C070400C9EFB2 /* gfx */,
 				09C89BE5159BFDBD00C9EFB2 /* momu */,
 				4D8DAE511592D1C400A6B60C /* AppDelegate.h */,
 				4D8DAE521592D1C400A6B60C /* AppDelegate.mm */,
@@ -122,6 +154,8 @@
 				4D8DAE491592D1C400A6B60C /* Supporting Files */,
 				09C89BEA159BFEC300C9EFB2 /* MMAudio.h */,
 				09C89BEB159BFEC300C9EFB2 /* MMAudio.mm */,
+				09C89C0C159D12A300C9EFB2 /* Flare.h */,
+				09C89C0A159D129900C9EFB2 /* Flare.mm */,
 			);
 			path = MobileMusic;
 			sourceTree = "<group>";
@@ -190,6 +224,7 @@
 				4D8DAE4D1592D1C400A6B60C /* InfoPlist.strings in Resources */,
 				4D8DAE5D1592D1C400A6B60C /* ViewController_iPhone.xib in Resources */,
 				4D8DAE601592D1C400A6B60C /* ViewController_iPad.xib in Resources */,
+				09C89C01159C0B5000C9EFB2 /* flare.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +240,9 @@
 				4D8DAE5A1592D1C400A6B60C /* ViewController.mm in Sources */,
 				09C89BE9159BFDDE00C9EFB2 /* mo_audio.mm in Sources */,
 				09C89BEC159BFEC300C9EFB2 /* MMAudio.mm in Sources */,
+				09C89BFD159C070400C9EFB2 /* Geometry.cpp in Sources */,
+				09C89BFE159C070400C9EFB2 /* Texture.mm in Sources */,
+				09C89C0B159D129900C9EFB2 /* Flare.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
