@@ -9,6 +9,13 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "MMAudio.h"
+
+@interface AppDelegate ()
+{
+    MMAudio * mmAudio;
+}
+@end
 
 @implementation AppDelegate
 
@@ -26,6 +33,10 @@
     }
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    mmAudio = new MMAudio;
+    mmAudio->start();
+    
     return YES;
 }
 

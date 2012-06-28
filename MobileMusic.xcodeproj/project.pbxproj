@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09C89BE9159BFDDE00C9EFB2 /* mo_audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09C89BE7159BFDDE00C9EFB2 /* mo_audio.mm */; };
+		09C89BEC159BFEC300C9EFB2 /* MMAudio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09C89BEB159BFEC300C9EFB2 /* MMAudio.mm */; };
+		09C89BF0159BFFF600C9EFB2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89BED159BFFF500C9EFB2 /* AudioToolbox.framework */; };
+		09C89BF2159BFFF600C9EFB2 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89BEF159BFFF500C9EFB2 /* CoreAudio.framework */; };
 		4D8DAE3F1592D1C400A6B60C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE3E1592D1C400A6B60C /* UIKit.framework */; };
 		4D8DAE411592D1C400A6B60C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE401592D1C400A6B60C /* Foundation.framework */; };
 		4D8DAE431592D1C400A6B60C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE421592D1C400A6B60C /* CoreGraphics.framework */; };
@@ -21,6 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09C89BE6159BFDDE00C9EFB2 /* mo_audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mo_audio.h; sourceTree = "<group>"; };
+		09C89BE7159BFDDE00C9EFB2 /* mo_audio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mo_audio.mm; sourceTree = "<group>"; };
+		09C89BE8159BFDDE00C9EFB2 /* mo_def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mo_def.h; sourceTree = "<group>"; };
+		09C89BEA159BFEC300C9EFB2 /* MMAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAudio.h; sourceTree = "<group>"; };
+		09C89BEB159BFEC300C9EFB2 /* MMAudio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMAudio.mm; sourceTree = "<group>"; };
+		09C89BED159BFFF500C9EFB2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		09C89BEF159BFFF500C9EFB2 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		4D8DAE3A1592D1C400A6B60C /* MobileMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8DAE3E1592D1C400A6B60C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D8DAE401592D1C400A6B60C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C89BF0159BFFF600C9EFB2 /* AudioToolbox.framework in Frameworks */,
+				09C89BF2159BFFF600C9EFB2 /* CoreAudio.framework in Frameworks */,
 				4D8DAE3F1592D1C400A6B60C /* UIKit.framework in Frameworks */,
 				4D8DAE411592D1C400A6B60C /* Foundation.framework in Frameworks */,
 				4D8DAE431592D1C400A6B60C /* CoreGraphics.framework in Frameworks */,
@@ -55,6 +68,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09C89BE5159BFDBD00C9EFB2 /* momu */ = {
+			isa = PBXGroup;
+			children = (
+				09C89BE6159BFDDE00C9EFB2 /* mo_audio.h */,
+				09C89BE7159BFDDE00C9EFB2 /* mo_audio.mm */,
+				09C89BE8159BFDDE00C9EFB2 /* mo_def.h */,
+			);
+			path = momu;
+			sourceTree = "<group>";
+		};
 		4D8DAE2F1592D1C400A6B60C = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +98,8 @@
 		4D8DAE3D1592D1C400A6B60C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09C89BED159BFFF500C9EFB2 /* AudioToolbox.framework */,
+				09C89BEF159BFFF500C9EFB2 /* CoreAudio.framework */,
 				4D8DAE3E1592D1C400A6B60C /* UIKit.framework */,
 				4D8DAE401592D1C400A6B60C /* Foundation.framework */,
 				4D8DAE421592D1C400A6B60C /* CoreGraphics.framework */,
@@ -87,6 +112,7 @@
 		4D8DAE481592D1C400A6B60C /* MobileMusic */ = {
 			isa = PBXGroup;
 			children = (
+				09C89BE5159BFDBD00C9EFB2 /* momu */,
 				4D8DAE511592D1C400A6B60C /* AppDelegate.h */,
 				4D8DAE521592D1C400A6B60C /* AppDelegate.mm */,
 				4D8DAE581592D1C400A6B60C /* ViewController.h */,
@@ -94,6 +120,8 @@
 				4D8DAE5B1592D1C400A6B60C /* ViewController_iPhone.xib */,
 				4D8DAE5E1592D1C400A6B60C /* ViewController_iPad.xib */,
 				4D8DAE491592D1C400A6B60C /* Supporting Files */,
+				09C89BEA159BFEC300C9EFB2 /* MMAudio.h */,
+				09C89BEB159BFEC300C9EFB2 /* MMAudio.mm */,
 			);
 			path = MobileMusic;
 			sourceTree = "<group>";
@@ -175,6 +203,8 @@
 				4D8DAE4F1592D1C400A6B60C /* main.m in Sources */,
 				4D8DAE531592D1C400A6B60C /* AppDelegate.mm in Sources */,
 				4D8DAE5A1592D1C400A6B60C /* ViewController.mm in Sources */,
+				09C89BE9159BFDDE00C9EFB2 /* mo_audio.mm in Sources */,
+				09C89BEC159BFEC300C9EFB2 /* MMAudio.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
