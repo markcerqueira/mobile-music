@@ -9,6 +9,8 @@
 #import "Flare.h"
 #import "Geometry.h"
 #import "Texture.h"
+#import "FlareSound.h"
+#import "MMAudio.h"
 
 
 GLuint Flare::tex = 0;
@@ -57,6 +59,16 @@ void Flare::init()
     GLcolor4f c = GLcolor4f(0.8, 0.75, 0.16, 1.0);
     
     square[0].color = square[1].color = square[2].color = square[3].color = c;
+    
+    // setup audio
+    fs = new FlareSound(MOBILEMUSIC_SRATE);
+    fs->init();
+    MMAudio::instance()->add(fs);
+}
+
+void Flare::setLocation(GLvertex3f loc)
+{
+    this->loc = loc;
 }
 
 void Flare::update(float dt)
@@ -107,6 +119,8 @@ void Flare::render()
 void Flare::destroy()
 {
 //    if(tex) { glDeleteTextures(1, &tex); tex = 0; }
+    MMAudio::instance()->remove(fs);
+    fs = NULL; // MMAudio is responsible for freeing fs's memory
 }
 
 

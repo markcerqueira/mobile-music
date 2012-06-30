@@ -18,6 +18,7 @@
 		09C89C7F159E754500C9EFB2 /* SKINI.msg in Resources */ = {isa = PBXBuildFile; fileRef = 09C89C67159E754500C9EFB2 /* SKINI.msg */; };
 		09C89C80159E754500C9EFB2 /* SKINI.tbl in Resources */ = {isa = PBXBuildFile; fileRef = 09C89C68159E754500C9EFB2 /* SKINI.tbl */; };
 		09C89C81159E754500C9EFB2 /* libstk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89C7E159E754500C9EFB2 /* libstk.a */; };
+		09C89E46159E86B300C9EFB2 /* FlareSound.mm in Sources */ = {isa = PBXBuildFile; fileRef = 09C89E45159E86B300C9EFB2 /* FlareSound.mm */; };
 		4D8DAE3F1592D1C400A6B60C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE3E1592D1C400A6B60C /* UIKit.framework */; };
 		4D8DAE411592D1C400A6B60C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE401592D1C400A6B60C /* Foundation.framework */; };
 		4D8DAE431592D1C400A6B60C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE421592D1C400A6B60C /* CoreGraphics.framework */; };
@@ -149,6 +150,9 @@
 		09C89C7B159E754500C9EFB2 /* WvIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WvIn.h; sourceTree = "<group>"; };
 		09C89C7C159E754500C9EFB2 /* WvOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WvOut.h; sourceTree = "<group>"; };
 		09C89C7E159E754500C9EFB2 /* libstk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libstk.a; sourceTree = "<group>"; };
+		09C89E44159E840F00C9EFB2 /* CircularBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircularBuffer.h; sourceTree = "<group>"; };
+		09C89E45159E86B300C9EFB2 /* FlareSound.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FlareSound.mm; sourceTree = "<group>"; };
+		09C89E47159E86BD00C9EFB2 /* FlareSound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlareSound.h; sourceTree = "<group>"; };
 		4D8DAE3A1592D1C400A6B60C /* MobileMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8DAE3E1592D1C400A6B60C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D8DAE401592D1C400A6B60C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -377,20 +381,23 @@
 		4D8DAE481592D1C400A6B60C /* MobileMusic */ = {
 			isa = PBXGroup;
 			children = (
-				09C89BFF159C0B5000C9EFB2 /* Resources */,
-				09C89BF8159C070400C9EFB2 /* gfx */,
-				09C89BE5159BFDBD00C9EFB2 /* momu */,
-				4D8DAE511592D1C400A6B60C /* AppDelegate.h */,
-				4D8DAE521592D1C400A6B60C /* AppDelegate.mm */,
-				4D8DAE581592D1C400A6B60C /* ViewController.h */,
-				4D8DAE591592D1C400A6B60C /* ViewController.mm */,
-				4D8DAE5B1592D1C400A6B60C /* ViewController_iPhone.xib */,
-				4D8DAE5E1592D1C400A6B60C /* ViewController_iPad.xib */,
-				4D8DAE491592D1C400A6B60C /* Supporting Files */,
-				09C89BEA159BFEC300C9EFB2 /* MMAudio.h */,
-				09C89BEB159BFEC300C9EFB2 /* MMAudio.mm */,
 				09C89C0C159D12A300C9EFB2 /* Flare.h */,
 				09C89C0A159D129900C9EFB2 /* Flare.mm */,
+				09C89E47159E86BD00C9EFB2 /* FlareSound.h */,
+				09C89E45159E86B300C9EFB2 /* FlareSound.mm */,
+				4D8DAE581592D1C400A6B60C /* ViewController.h */,
+				4D8DAE591592D1C400A6B60C /* ViewController.mm */,
+				09C89BEA159BFEC300C9EFB2 /* MMAudio.h */,
+				09C89BEB159BFEC300C9EFB2 /* MMAudio.mm */,
+				4D8DAE511592D1C400A6B60C /* AppDelegate.h */,
+				4D8DAE521592D1C400A6B60C /* AppDelegate.mm */,
+				09C89E44159E840F00C9EFB2 /* CircularBuffer.h */,
+				4D8DAE5B1592D1C400A6B60C /* ViewController_iPhone.xib */,
+				4D8DAE5E1592D1C400A6B60C /* ViewController_iPad.xib */,
+				09C89BF8159C070400C9EFB2 /* gfx */,
+				09C89BE5159BFDBD00C9EFB2 /* momu */,
+				09C89BFF159C0B5000C9EFB2 /* Resources */,
+				4D8DAE491592D1C400A6B60C /* Supporting Files */,
 			);
 			path = MobileMusic;
 			sourceTree = "<group>";
@@ -480,6 +487,7 @@
 				09C89BFD159C070400C9EFB2 /* Geometry.cpp in Sources */,
 				09C89BFE159C070400C9EFB2 /* Texture.mm in Sources */,
 				09C89C0B159D129900C9EFB2 /* Flare.mm in Sources */,
+				09C89E46159E86B300C9EFB2 /* FlareSound.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

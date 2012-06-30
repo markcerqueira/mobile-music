@@ -8,7 +8,7 @@
 
 #import "MMAudio.h"
 #import "mo_audio.h"
-#import "BandedWG.h"
+#import "FlareSound.h"
 
 
 void audio_callback(Float32 * buffer, UInt32 numFrames, void * userData)
@@ -18,40 +18,68 @@ void audio_callback(Float32 * buffer, UInt32 numFrames, void * userData)
     mmaudio->audio_callback(buffer, numFrames);
 }
 
-MMAudio::MMAudio()
+MMAudio * g_mmaudio = NULL;
+
+MMAudio * MMAudio::instance()
 {
-    p = 0;
+    if(g_mmaudio == NULL)
+        g_mmaudio = new MMAudio;
+    return g_mmaudio;
+}
+
+MMAudio::MMAudio() :
+addList(CircularBuffer<FlareSound *>(20)),
+removeList(CircularBuffer<FlareSound *>(20))
+{
+    stk::Stk::setSampleRate(MOBILEMUSIC_SRATE);
 }
 
 void MMAudio::start()
 {
-    MoAudio::init(44100, 512, 2);
+    MoAudio::init(MOBILEMUSIC_SRATE, 512, 2);
     MoAudio::start(::audio_callback, this);    
     
-    stk::Stk::setSampleRate(44100);
     
-    wg = stk::BandedWG();
-    wg.setFrequency(220);
-    wg.controlChange(16, 3);
-//    wg.controlChange(2, 20);
-//    wg.controlChange(4, 20);
-//    wg.controlChange(128, 20);
-    wg.controlChange(1, 1.0);
-    wg.noteOn(220, 1.0);
-    wg.startBowing(1.0, 1.0);
+//    wg = stk::BandedWG();
+//    wg.setPreset(3);
+//    wg.noteOn(220, 1.0);
+//    wg.startBowing(1.0, 1.0);
+}
+
+void MMAudio::add(FlareSound * fs)
+{
+    addList.put(fs);
+}
+
+void MMAudio::remove(FlareSound * fs)
+{
+    removeList.put(fs);
 }
 
 void MMAudio::audio_callback(Float32 * buffer, UInt32 numFrames)
 {
+    FlareSound * fs = NULL;
+    while(addList.get(fs))
+        flareSounds.push_back(fs);
+    while(removeList.get(fs))
+    {
+        flareSounds.remove(fs);
+        fs->destroy();
+        delete fs;
+    }
+          
     for(int i = 0; i < numFrames; i++)
     {
         // stereo interleaved operation
-//        buffer[i*2] = sinf(p*220.0/44100.0*2*M_PI);
-//        buffer[i*2+1] = sinf(p*220.0/44100.0*2*M_PI);
-        float samp = wg.tick();
-        buffer[i*2] = samp;
-        buffer[i*2+1] = samp;
-        p++;
+        float sample = 0;
+        
+        for(std::list<FlareSound *>::iterator i = flareSounds.begin(); i != flareSounds.end(); i++)
+        {
+            sample += (*i)->tick();
+        }
+        
+        buffer[i*2] = sample;
+        buffer[i*2+1] = sample;
     }
 }
 

@@ -11,6 +11,8 @@
 
 #include "Geometry.h"
 
+class FlareSound;
+
 class Flare
 {
 public:
@@ -22,7 +24,7 @@ public:
     void render();
     void destroy();
     
-    void setLocation(GLvertex3f loc) { this->loc = loc; }
+    void setLocation(GLvertex3f loc);
     
     void fadeOut();
     
@@ -33,6 +35,8 @@ protected:
     GLvertex3f loc;
     float scale;
     float t;
+    
+    FlareSound * fs;
 };
 
 

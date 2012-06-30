@@ -7,18 +7,30 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BandedWG.h"
+#import "CircularBuffer.h"
+#import <list>
+
+#define MOBILEMUSIC_SRATE (44100)
+
+class FlareSound;
 
 class MMAudio
 {
 public:
+    static MMAudio * instance();
+    
     MMAudio();
     void start();
     
     void audio_callback(Float32 * buffer, UInt32 numFrames);
     
+    void add(FlareSound *f);
+    void remove(FlareSound *f);
+    
 private:
     
-    stk::BandedWG wg;
-    float p;
+    CircularBuffer<FlareSound *> addList;
+    CircularBuffer<FlareSound *> removeList;
+    
+    std::list<FlareSound *> flareSounds;
 };

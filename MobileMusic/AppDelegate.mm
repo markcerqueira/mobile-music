@@ -34,7 +34,7 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
-    mmAudio = new MMAudio;
+    mmAudio = MMAudio::instance();
     mmAudio->start();
     
     return YES;
