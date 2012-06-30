@@ -24,6 +24,8 @@ public:
     
     void setLocation(GLvertex3f loc) { this->loc = loc; }
     
+    void fadeOut();
+    
 protected:
     static GLuint tex;
     GLgeoprimf square[4];

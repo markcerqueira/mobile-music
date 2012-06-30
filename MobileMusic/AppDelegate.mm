@@ -35,7 +35,7 @@
     [self.window makeKeyAndVisible];
     
     mmAudio = new MMAudio;
-    //mmAudio->start();
+    mmAudio->start();
     
     return YES;
 }

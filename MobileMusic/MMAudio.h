@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BandedWG.h"
 
 class MMAudio
 {
@@ -18,5 +19,6 @@ public:
     
 private:
     
+    stk::BandedWG wg;
     float p;
 };

@@ -110,3 +110,8 @@ void Flare::destroy()
 }
 
 
+void Flare::fadeOut()
+{
+    
+}
+
