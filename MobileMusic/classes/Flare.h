@@ -24,6 +24,7 @@ public:
     void render();
     void destroy();
     
+    void setColor(GLcolor4f c) { m_color = c; }
     void setLocation(GLvertex3f loc);
     void setPitch(float p);
     void mute(bool m);
@@ -34,6 +35,7 @@ protected:
     static GLuint tex;
     GLgeoprimf square[4];
     
+    GLcolor4f m_color;
     GLvertex3f loc;
     float scale;
     float t;

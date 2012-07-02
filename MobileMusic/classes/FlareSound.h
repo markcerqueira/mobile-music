@@ -10,6 +10,7 @@
 #define MobileMusic_FlareSound_h
 
 #include "BandedWG.h"
+#include "Blit.h"
 
 class FlareSound
 {
@@ -21,7 +22,7 @@ public:
     float tick();
     void destroy();
     
-    void setFrequency(float f) { m_freq = f; m_wg.setFrequency(f); m_wg.noteOn(f, 1.0); }
+    void setFrequency(float f) { m_freq = f; m_blit.setFrequency(f); m_wg.noteOn(f, 1.0); }
     void setGain(float g) { m_gain = g; }
     
 private:
@@ -33,6 +34,7 @@ private:
     float m_carrier_phase;
     
     stk::BandedWG m_wg;
+    stk::Blit m_blit;
 };
 
 #endif

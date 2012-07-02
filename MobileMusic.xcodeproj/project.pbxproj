@@ -9,24 +9,7 @@
 /* Begin PBXBuildFile section */
 		09C89BF0159BFFF600C9EFB2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89BED159BFFF500C9EFB2 /* AudioToolbox.framework */; };
 		09C89BF2159BFFF600C9EFB2 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89BEF159BFFF500C9EFB2 /* CoreAudio.framework */; };
-		09C89C7F159E754500C9EFB2 /* SKINI.msg in Resources */ = {isa = PBXBuildFile; fileRef = 09C89C67159E754500C9EFB2 /* SKINI.msg */; };
-		09C89C80159E754500C9EFB2 /* SKINI.tbl in Resources */ = {isa = PBXBuildFile; fileRef = 09C89C68159E754500C9EFB2 /* SKINI.tbl */; };
 		09C89C81159E754500C9EFB2 /* libstk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89C7E159E754500C9EFB2 /* libstk.a */; };
-		4D10B29715A122D200A5AB51 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		4D10B29815A122D200A5AB51 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		4D10B29915A122D200A5AB51 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		4D10B29A15A122D200A5AB51 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		4D10B29B15A122D200A5AB51 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		4D10B29C15A122D200A5AB51 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		4D10B29D15A122D200A5AB51 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		4D10B29E15A122D200A5AB51 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		4D10B29F15A122D200A5AB51 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		4D10B2A015A122D200A5AB51 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		4D10B2A115A122D200A5AB51 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		4D10B2A215A122D200A5AB51 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		4D10B2A315A122D200A5AB51 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		4D10B2A415A122D200A5AB51 /* (null) in Resources */ = {isa = PBXBuildFile; };
-		4D10B2A815A1236300A5AB51 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4D8DAE3F1592D1C400A6B60C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE3E1592D1C400A6B60C /* UIKit.framework */; };
 		4D8DAE411592D1C400A6B60C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE401592D1C400A6B60C /* Foundation.framework */; };
 		4D8DAE431592D1C400A6B60C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE421592D1C400A6B60C /* CoreGraphics.framework */; };
@@ -42,9 +25,6 @@
 		4DF315D215A12C5300A1C304 /* Texture.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3155615A12C5300A1C304 /* Texture.mm */; };
 		4DF315D315A12C5300A1C304 /* mo_audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3155915A12C5300A1C304 /* mo_audio.mm */; };
 		4DF315D415A12C5300A1C304 /* flare.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DF3155C15A12C5300A1C304 /* flare.png */; };
-		4DF315D515A12C5300A1C304 /* SKINI.msg in Resources */ = {isa = PBXBuildFile; fileRef = 4DF315AF15A12C5300A1C304 /* SKINI.msg */; };
-		4DF315D615A12C5300A1C304 /* SKINI.tbl in Resources */ = {isa = PBXBuildFile; fileRef = 4DF315B015A12C5300A1C304 /* SKINI.tbl */; };
-		4DF315D715A12C5300A1C304 /* libstk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF315C615A12C5300A1C304 /* libstk.a */; };
 		4DF315D815A12C5300A1C304 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF315C815A12C5300A1C304 /* main.m */; };
 		4DF315D915A12C5300A1C304 /* MobileMusic-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DF315C915A12C5300A1C304 /* MobileMusic-Info.plist */; };
 		4DF315DE15A12D0F00A1C304 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF315DA15A12D0F00A1C304 /* ViewController.xib */; };
@@ -157,6 +137,7 @@
 		09C89C7B159E754500C9EFB2 /* WvIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WvIn.h; sourceTree = "<group>"; };
 		09C89C7C159E754500C9EFB2 /* WvOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WvOut.h; sourceTree = "<group>"; };
 		09C89C7E159E754500C9EFB2 /* libstk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libstk.a; sourceTree = "<group>"; };
+		09E6E4E415A130A1008EE730 /* HSV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSV.h; sourceTree = "<group>"; };
 		4D8DAE3A1592D1C400A6B60C /* MobileMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8DAE3E1592D1C400A6B60C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D8DAE401592D1C400A6B60C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -308,8 +289,6 @@
 				4D8DAE451592D1C400A6B60C /* GLKit.framework in Frameworks */,
 				4D8DAE471592D1C400A6B60C /* OpenGLES.framework in Frameworks */,
 				09C89C81159E754500C9EFB2 /* libstk.a in Frameworks */,
-				4D10B2A215A122D200A5AB51 /* (null) in Frameworks */,
-				4DF315D715A12C5300A1C304 /* libstk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,8 +501,9 @@
 		4DF3155215A12C5300A1C304 /* gfx */ = {
 			isa = PBXGroup;
 			children = (
-				4DF3155315A12C5300A1C304 /* Geometry.cpp */,
+				09E6E4E415A130A1008EE730 /* HSV.h */,
 				4DF3155415A12C5300A1C304 /* Geometry.h */,
+				4DF3155315A12C5300A1C304 /* Geometry.cpp */,
 				4DF3155515A12C5300A1C304 /* Texture.h */,
 				4DF3155615A12C5300A1C304 /* Texture.mm */,
 			);
@@ -734,15 +714,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09C89C7F159E754500C9EFB2 /* SKINI.msg in Resources */,
-				09C89C80159E754500C9EFB2 /* SKINI.tbl in Resources */,
-				4D10B29F15A122D200A5AB51 /* (null) in Resources */,
-				4D10B2A015A122D200A5AB51 /* (null) in Resources */,
-				4D10B2A115A122D200A5AB51 /* (null) in Resources */,
-				4D10B2A415A122D200A5AB51 /* (null) in Resources */,
 				4DF315D415A12C5300A1C304 /* flare.png in Resources */,
-				4DF315D515A12C5300A1C304 /* SKINI.msg in Resources */,
-				4DF315D615A12C5300A1C304 /* SKINI.tbl in Resources */,
 				4DF315D915A12C5300A1C304 /* MobileMusic-Info.plist in Resources */,
 				4DF315DE15A12D0F00A1C304 /* ViewController.xib in Resources */,
 				4DF315DF15A12D0F00A1C304 /* ViewController~iphone.xib in Resources */,
@@ -756,16 +728,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D10B29715A122D200A5AB51 /* (null) in Sources */,
-				4D10B29815A122D200A5AB51 /* (null) in Sources */,
-				4D10B29915A122D200A5AB51 /* (null) in Sources */,
-				4D10B29A15A122D200A5AB51 /* (null) in Sources */,
-				4D10B29B15A122D200A5AB51 /* (null) in Sources */,
-				4D10B29C15A122D200A5AB51 /* (null) in Sources */,
-				4D10B29D15A122D200A5AB51 /* (null) in Sources */,
-				4D10B29E15A122D200A5AB51 /* (null) in Sources */,
-				4D10B2A315A122D200A5AB51 /* (null) in Sources */,
-				4D10B2A815A1236300A5AB51 /* (null) in Sources */,
 				4DF315CB15A12C5300A1C304 /* AppDelegate.mm in Sources */,
 				4DF315CC15A12C5300A1C304 /* Flare.mm in Sources */,
 				4DF315CD15A12C5300A1C304 /* FlareSound.mm in Sources */,

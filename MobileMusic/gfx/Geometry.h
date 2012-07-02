@@ -48,9 +48,24 @@ GLvertex3f operator/(const GLvertex3f &v, const GLfloat &s);
 
 struct GLcolor4f
 {
-    GLfloat r;
-    GLfloat g;
-    GLfloat b;
+    union
+    {
+        GLfloat r;
+        GLfloat h;
+    };
+    
+    union
+    {
+        GLfloat g;
+        GLfloat s;
+    };
+    
+    union
+    {
+        GLfloat b;
+        GLfloat v;
+    };
+    
     GLfloat a;
     
     

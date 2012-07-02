@@ -8,18 +8,20 @@
 
 #import "ViewController.h"
 #import "Flare.h"
+#import "HSV.h"
 #import <map>
 
 
-static const int g_rootNote = 58;
+static const int g_rootNote = 46;
+static int g_lastRoot = g_rootNote;
 static const int g_scale[] =
 { 
-    0,   4,  7, 10, 
-    12, 16, 19, 22,
-    24, 28, 31, 34,
+    0,   4,  7,  9, 
+    12, 16, 19, 21,
+    24, 28, 31, 33,
         31, 28, 24,
-    22, 19, 16, 12,
-    10,  7,  4
+    21, 19, 16, 12,
+     9,  7,  4
 };
 static const int g_scaleLength = sizeof(g_scale)/sizeof(int);
 static int g_scaleIndex = 0;
@@ -44,12 +46,16 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
     std::map<UITouch *, Flare *> flares;
     
     Flare * flare1;
+    
+    GLcolor4f currentColor;
 }
 
 @property (strong, nonatomic) EAGLContext *context;
 
 - (void)setupGL;
 - (void)tearDownGL;
+
+- (void)allTouchesLeft;
 
 @end
 
@@ -73,9 +79,13 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
     
     [self setupGL];
     
+    srandom(time(NULL));
+    
     flare1 = new Flare;
     flare1->init();
     flare1->mute(true);
+    
+    [self allTouchesLeft];
 }
 
 - (void)viewDidUnload
@@ -176,7 +186,10 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
         }
         
         f->setLocation(uiview2gl([touch locationInView:self.view], self.view));
-        f->setPitch(g_rootNote + g_scale[g_scaleIndex++ % g_scaleLength]);
+        
+        f->setPitch(g_lastRoot + g_scale[g_scaleIndex++ % g_scaleLength]);
+        
+        f->setColor(currentColor);
         
         flares[touch] = f;
     }
@@ -207,6 +220,8 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
             f->setLocation(uiview2gl([touch locationInView:self.view], self.view));
             flare1 = f;
             flare1->mute(true);
+            
+            [self allTouchesLeft];
         }
         else
         {
@@ -221,6 +236,21 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self touchesEnded:touches withEvent:event];
+}
+
+- (void)allTouchesLeft
+{
+    GLcolor4f hsv;
+    hsv.h = ((float) random()) / INT_MAX;
+    hsv.s = 0.2 + 0.3*(((float) random()) / INT_MAX);
+    hsv.b = 0.8 + 0.2*(((float) random()) / INT_MAX);
+    currentColor = hsv2rgb(hsv);
+    
+    g_lastRoot -= 4;
+    while(g_lastRoot < g_rootNote)
+        g_lastRoot += 12;
+    while(g_lastRoot >= g_rootNote+12)
+        g_lastRoot -= 12;
 }
 
 @end

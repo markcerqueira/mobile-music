@@ -120,7 +120,7 @@ void Flare::update(float dt)
     scale = 1 + 0.16*sinf(2*M_PI*t*f_scale);
     
     float f_alpha = f_scale;
-    GLcolor4f c = square[0].color;
+    GLcolor4f c = m_color;
     c.a = 1 + 0.1*sinf(2*M_PI*t*f_alpha);
     
     square[0].color = square[1].color = square[2].color = square[3].color = c;
