@@ -47,6 +47,8 @@
 		4DF315D715A12C5300A1C304 /* libstk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF315C615A12C5300A1C304 /* libstk.a */; };
 		4DF315D815A12C5300A1C304 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF315C815A12C5300A1C304 /* main.m */; };
 		4DF315D915A12C5300A1C304 /* MobileMusic-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DF315C915A12C5300A1C304 /* MobileMusic-Info.plist */; };
+		4DF315DE15A12D0F00A1C304 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF315DA15A12D0F00A1C304 /* ViewController.xib */; };
+		4DF315DF15A12D0F00A1C304 /* ViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF315DC15A12D0F00A1C304 /* ViewController~iphone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -289,6 +291,8 @@
 		4DF315C815A12C5300A1C304 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4DF315C915A12C5300A1C304 /* MobileMusic-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MobileMusic-Info.plist"; sourceTree = "<group>"; };
 		4DF315CA15A12C5300A1C304 /* MobileMusic-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MobileMusic-Prefix.pch"; sourceTree = "<group>"; };
+		4DF315DB15A12D0F00A1C304 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = MobileMusic/en.lproj/ViewController.xib; sourceTree = SOURCE_ROOT; };
+		4DF315DD15A12D0F00A1C304 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "MobileMusic/en.lproj/ViewController~iphone.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,6 +504,8 @@
 				4DF3154F15A12C5300A1C304 /* mtof.h */,
 				4DF3155015A12C5300A1C304 /* ViewController.h */,
 				4DF3155115A12C5300A1C304 /* ViewController.mm */,
+				4DF315DA15A12D0F00A1C304 /* ViewController.xib */,
+				4DF315DC15A12D0F00A1C304 /* ViewController~iphone.xib */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -738,6 +744,8 @@
 				4DF315D515A12C5300A1C304 /* SKINI.msg in Resources */,
 				4DF315D615A12C5300A1C304 /* SKINI.tbl in Resources */,
 				4DF315D915A12C5300A1C304 /* MobileMusic-Info.plist in Resources */,
+				4DF315DE15A12D0F00A1C304 /* ViewController.xib in Resources */,
+				4DF315DF15A12D0F00A1C304 /* ViewController~iphone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,6 +780,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4DF315DA15A12D0F00A1C304 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DF315DB15A12D0F00A1C304 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+		4DF315DC15A12D0F00A1C304 /* ViewController~iphone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4DF315DD15A12D0F00A1C304 /* en */,
+			);
+			name = "ViewController~iphone.xib";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4D8DAE611592D1C400A6B60C /* Debug */ = {
