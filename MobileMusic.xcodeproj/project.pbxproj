@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		09C89BF0159BFFF600C9EFB2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89BED159BFFF500C9EFB2 /* AudioToolbox.framework */; };
 		09C89BF2159BFFF600C9EFB2 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89BEF159BFFF500C9EFB2 /* CoreAudio.framework */; };
-		09C89C7F159E754500C9EFB2 /* SKINI.msg in Resources */ = {isa = PBXBuildFile; fileRef = 09C89C67159E754500C9EFB2 /* SKINI.msg */; };
-		09C89C80159E754500C9EFB2 /* SKINI.tbl in Resources */ = {isa = PBXBuildFile; fileRef = 09C89C68159E754500C9EFB2 /* SKINI.tbl */; };
 		4D8DAE3F1592D1C400A6B60C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE3E1592D1C400A6B60C /* UIKit.framework */; };
 		4D8DAE411592D1C400A6B60C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE401592D1C400A6B60C /* Foundation.framework */; };
 		4D8DAE431592D1C400A6B60C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE421592D1C400A6B60C /* CoreGraphics.framework */; };
@@ -724,8 +722,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09C89C7F159E754500C9EFB2 /* SKINI.msg in Resources */,
-				09C89C80159E754500C9EFB2 /* SKINI.tbl in Resources */,
 				4DF315D415A12C5300A1C304 /* flare.png in Resources */,
 				4DF315DE15A12D0F00A1C304 /* ViewController.xib in Resources */,
 				4DF315DF15A12D0F00A1C304 /* ViewController~iphone.xib in Resources */,
