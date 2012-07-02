@@ -10,6 +10,7 @@
 
 #import "ViewController.h"
 #import "MMAudio.h"
+#import "AccelerometerHelper.h"
 
 @interface AppDelegate ()
 {
@@ -33,6 +34,8 @@
     }
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    [AccelerometerHelper sharedInstance];
     
     mmAudio = MMAudio::instance();
     mmAudio->start();
