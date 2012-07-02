@@ -1,0 +1,10 @@
+= mobile-music
+<em>A starter Xcode project for mobile music development on iOS devices</em>
+
+== MAIN FEATURES
+
+== GETTING STARTED
+
+== MORE INFO
+
+== CONTRIBUTE
