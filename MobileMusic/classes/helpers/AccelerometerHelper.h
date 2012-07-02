@@ -22,11 +22,13 @@
 
 @end
 
-// 
+
 @interface AccelerometerHelper : NSObject<UIAccelerometerDelegate>
 
+// returns the AccelerometerHelper singleton
 + (AccelerometerHelper *)sharedInstance;
 
+// returns most recent acceleration data as an AccelerometerData object
 - (AccelerometerData *)accelerationData;
 
 @end
