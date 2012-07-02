@@ -11,6 +11,20 @@
 #import <map>
 
 
+static const int g_rootNote = 58;
+static const int g_scale[] =
+{ 
+    0,   4,  7, 10, 
+    12, 16, 19, 22,
+    24, 28, 31, 34,
+        31, 28, 24,
+    22, 19, 16, 12,
+    10,  7,  4
+};
+static const int g_scaleLength = sizeof(g_scale)/sizeof(int);
+static int g_scaleIndex = 0;
+
+
 GLvertex2f uiview2gl(CGPoint p, UIView * view)
 {
     GLvertex2f v;
@@ -61,6 +75,7 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
     
     flare1 = new Flare;
     flare1->init();
+    flare1->mute(true);
 }
 
 - (void)viewDidUnload
@@ -156,10 +171,12 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
         else
         {
             f = flare1;
+            flare1->mute(false);
             flare1 = NULL;
         }
         
         f->setLocation(uiview2gl([touch locationInView:self.view], self.view));
+        f->setPitch(g_rootNote + g_scale[g_scaleIndex++ % g_scaleLength]);
         
         flares[touch] = f;
     }
@@ -189,6 +206,7 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
             assert(flare1 == NULL);
             f->setLocation(uiview2gl([touch locationInView:self.view], self.view));
             flare1 = f;
+            flare1->mute(true);
         }
         else
         {

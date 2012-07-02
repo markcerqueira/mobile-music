@@ -25,6 +25,8 @@ public:
     void destroy();
     
     void setLocation(GLvertex3f loc);
+    void setPitch(float p);
+    void mute(bool m);
     
     void fadeOut();
     
@@ -37,6 +39,8 @@ protected:
     float t;
     
     FlareSound * fs;
+    float m_pitch;
+    float m_gain;
 };
 
 

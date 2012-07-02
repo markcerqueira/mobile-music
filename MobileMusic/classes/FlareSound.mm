@@ -12,7 +12,10 @@
 FlareSound::FlareSound(float fs) :
 m_fs(fs)
 {
-    
+    m_gain = 0;
+    m_freq = 220;
+    m_carrier_phase = 0;
+    m_modulator_phase = 0;
 }
 
 FlareSound::~FlareSound()
@@ -23,15 +26,32 @@ FlareSound::~FlareSound()
 
 void FlareSound::init()
 {
-    m_wg.setPreset(3);
-    m_wg.noteOn(220, 1.0);
-    m_wg.startBowing(1.0, 2.0);
+    m_gain = 1;
+    m_freq = 220;
+    m_carrier_phase = 0;
+    m_modulator_phase = 0;
 }
 
 
 float FlareSound::tick()
 {
-    return m_wg.tick();
+    float mod_gain = 1;
+    float mod_freq = m_freq;
+    
+//    float modulator = mod_gain * sinf(2.0f*M_PI*m_modulator_phase);
+//    float samp = m_gain * sinf(2.0f*M_PI*(m_carrier_phase+modulator));
+    
+    float samp = m_gain * sinf(2.0f*M_PI*m_carrier_phase);
+    
+    m_modulator_phase += mod_freq/m_fs;
+    while(m_modulator_phase > 1)
+        m_modulator_phase -= 1;
+    
+    m_carrier_phase += m_freq/m_fs;
+    while(m_carrier_phase > 1)
+        m_carrier_phase -= 1;
+    
+    return samp;
 }
 
 
