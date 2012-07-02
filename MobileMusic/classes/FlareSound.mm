@@ -30,6 +30,8 @@ void FlareSound::init()
     m_freq = 220;
     m_carrier_phase = 0;
     m_modulator_phase = 0;
+    
+    m_wg.setPreset(3);
 }
 
 
@@ -41,7 +43,9 @@ float FlareSound::tick()
 //    float modulator = mod_gain * sinf(2.0f*M_PI*m_modulator_phase);
 //    float samp = m_gain * sinf(2.0f*M_PI*(m_carrier_phase+modulator));
     
-    float samp = m_gain * sinf(2.0f*M_PI*m_carrier_phase);
+//    float samp = m_gain * sinf(2.0f*M_PI*m_carrier_phase);
+    
+    float samp = m_gain * m_wg.tick();
     
     m_modulator_phase += mod_freq/m_fs;
     while(m_modulator_phase > 1)

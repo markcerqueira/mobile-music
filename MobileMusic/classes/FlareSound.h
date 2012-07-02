@@ -21,7 +21,7 @@ public:
     float tick();
     void destroy();
     
-    void setFrequency(float f) { m_freq = f; }
+    void setFrequency(float f) { m_freq = f; m_wg.setFrequency(f); m_wg.noteOn(f, 1.0); }
     void setGain(float g) { m_gain = g; }
     
 private:

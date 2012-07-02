@@ -64,6 +64,8 @@ void Flare::init()
     
     square[0].color = square[1].color = square[2].color = square[3].color = c;
     
+    loc = GLvertex2f(0, 0);
+    
     // setup audio
     fs = new FlareSound(MOBILEMUSIC_SRATE);
     m_pitch = 60;
@@ -79,13 +81,8 @@ void Flare::setLocation(GLvertex3f loc)
 {
     this->loc = loc;
     
-    if(fs != NULL)
-    {
-        float sign = 1;
-        if(loc.y == 0) sign = 1;
-        else sign = loc.y/fabs(loc.y);
-        fs->setFrequency(mtof(m_pitch) + sign*(2-loc.magnitudeSquared())*2);
-    }
+    // reset pitch
+//    setPitch(m_pitch);
 }
 
 
@@ -95,10 +92,11 @@ void Flare::setPitch(float p)
     
     if(fs != NULL)
     {
-        float sign = 1;
-        if(loc.y == 0) sign = 1;
-        else sign = loc.y/fabs(loc.y);
-        fs->setFrequency(mtof(m_pitch) + sign*(2-loc.magnitudeSquared())*2);
+//        float sign = 1;
+//        if(loc.y == 0) sign = 1;
+//        else sign = loc.y/fabs(loc.y);
+//        fs->setFrequency(mtof(m_pitch) + sign*(5-loc.magnitudeSquared())*2);
+        fs->setFrequency(mtof(m_pitch));
     }
 }
 
@@ -133,26 +131,38 @@ void Flare::render()
 {
     glPushMatrix();
     
+    // move to position
     glTranslatef(loc.x, loc.y, loc.z);
+    // scale
     glScalef(scale, scale, scale);
     
+    // enable additive blending
     glEnable(GL_BLEND);
     glDisable(GL_DEPTH_TEST);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     
+    // enable texturing
     glEnable(GL_TEXTURE_2D);
+    // specifying texture to use
     glBindTexture(GL_TEXTURE_2D, tex);
     
+    // supply flare vertices
     glVertexPointer(3, GL_FLOAT, sizeof(GLgeoprimf), &square[0].vertex);
     glEnableClientState(GL_VERTEX_ARRAY);
+    
+    // supply flare normal coordinates
     glNormalPointer(GL_FLOAT, sizeof(GLgeoprimf), &square[0].normal);
     glEnableClientState(GL_NORMAL_ARRAY);
+    
+    // supply square texture coordinates
     glTexCoordPointer(2, GL_FLOAT, sizeof(GLgeoprimf), &square[0].texcoord);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    
+    // supply square color values
     glColorPointer(4, GL_FLOAT, sizeof(GLgeoprimf), &square[0].color);
     glEnableClientState(GL_COLOR_ARRAY);
     
-    // drawing twice makes a nice over-exposed effect
+    // with additive blending, drawing twice makes a nice over-exposed effect
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
