@@ -21,9 +21,16 @@ public:
     float tick();
     void destroy();
     
+    void setFrequency(float f) { m_freq = f; }
+    void setGain(float g) { m_gain = g; }
+    
 private:
     const float m_fs;
+    
+    float m_gain;
     float m_freq;
+    float m_modulator_phase;
+    float m_carrier_phase;
     
     stk::BandedWG m_wg;
 };

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CircularBuffer.h"
+#import "NRev.h"
 #import <list>
 
 #define MOBILEMUSIC_SRATE (44100)
@@ -33,4 +34,6 @@ private:
     CircularBuffer<FlareSound *> removeList;
     
     std::list<FlareSound *> flareSounds;
+    
+    stk::NRev * reverb;
 };

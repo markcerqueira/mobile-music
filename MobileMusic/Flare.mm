@@ -11,6 +11,7 @@
 #import "Texture.h"
 #import "FlareSound.h"
 #import "MMAudio.h"
+#import "mtof.h"
 
 
 GLuint Flare::tex = 0;
@@ -23,6 +24,9 @@ Flare::Flare()
     square[1] = GLgeoprimf();
     square[2] = GLgeoprimf();
     square[3] = GLgeoprimf();
+    
+    m_pitch = 60;
+    m_gain = 1;
 }
 
 Flare::~Flare()
@@ -62,13 +66,52 @@ void Flare::init()
     
     // setup audio
     fs = new FlareSound(MOBILEMUSIC_SRATE);
+    m_pitch = 60;
+    m_gain = 1;
+    
     fs->init();
+    fs->setFrequency(mtof(m_pitch));
+    
     MMAudio::instance()->add(fs);
 }
 
 void Flare::setLocation(GLvertex3f loc)
 {
     this->loc = loc;
+    
+    if(fs != NULL)
+    {
+        float sign = 1;
+        if(loc.y == 0) sign = 1;
+        else sign = loc.y/fabs(loc.y);
+        fs->setFrequency(mtof(m_pitch) + sign*(2-loc.magnitudeSquared())*2);
+    }
+}
+
+
+void Flare::setPitch(float p)
+{
+    m_pitch = p;
+    
+    if(fs != NULL)
+    {
+        float sign = 1;
+        if(loc.y == 0) sign = 1;
+        else sign = loc.y/fabs(loc.y);
+        fs->setFrequency(mtof(m_pitch) + sign*(2-loc.magnitudeSquared())*2);
+    }
+}
+
+
+void Flare::mute(bool m)
+{
+    if(m)
+        m_gain = 0;
+    else
+        m_gain = 1;
+    
+    if(fs != NULL)
+        fs->setGain(m_gain);
 }
 
 void Flare::update(float dt)

@@ -32,18 +32,16 @@ addList(CircularBuffer<FlareSound *>(20)),
 removeList(CircularBuffer<FlareSound *>(20))
 {
     stk::Stk::setSampleRate(MOBILEMUSIC_SRATE);
+    
+    reverb = new stk::NRev;
+    reverb->setT60(3);
+    reverb->setEffectMix(0.1);
 }
 
 void MMAudio::start()
 {
     MoAudio::init(MOBILEMUSIC_SRATE, 512, 2);
     MoAudio::start(::audio_callback, this);    
-    
-    
-//    wg = stk::BandedWG();
-//    wg.setPreset(3);
-//    wg.noteOn(220, 1.0);
-//    wg.startBowing(1.0, 1.0);
 }
 
 void MMAudio::add(FlareSound * fs)
@@ -77,6 +75,8 @@ void MMAudio::audio_callback(Float32 * buffer, UInt32 numFrames)
         {
             sample += (*i)->tick();
         }
+        
+        sample = reverb->tick(sample);
         
         buffer[i*2] = sample;
         buffer[i*2+1] = sample;

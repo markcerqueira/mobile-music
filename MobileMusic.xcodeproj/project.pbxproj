@@ -153,6 +153,7 @@
 		09C89E44159E840F00C9EFB2 /* CircularBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircularBuffer.h; sourceTree = "<group>"; };
 		09C89E45159E86B300C9EFB2 /* FlareSound.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FlareSound.mm; sourceTree = "<group>"; };
 		09C89E47159E86BD00C9EFB2 /* FlareSound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlareSound.h; sourceTree = "<group>"; };
+		09C89E5015A0E92700C9EFB2 /* mtof.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mtof.h; sourceTree = "<group>"; };
 		4D8DAE3A1592D1C400A6B60C /* MobileMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8DAE3E1592D1C400A6B60C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D8DAE401592D1C400A6B60C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -398,6 +399,7 @@
 				09C89BE5159BFDBD00C9EFB2 /* momu */,
 				09C89BFF159C0B5000C9EFB2 /* Resources */,
 				4D8DAE491592D1C400A6B60C /* Supporting Files */,
+				09C89E5015A0E92700C9EFB2 /* mtof.h */,
 			);
 			path = MobileMusic;
 			sourceTree = "<group>";
