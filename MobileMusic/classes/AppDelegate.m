@@ -9,16 +9,10 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
-#import "MMAudio.h"
+#import "MobileMusicCoreBridge.h"
 
 #import "AccelerometerHelper.h"
 #import "LocationHelper.h"
-
-@interface AppDelegate ()
-{
-    MMAudio * mmAudio;
-}
-@end
 
 @implementation AppDelegate
 
@@ -34,11 +28,12 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
+    // initialize helpers
     [AccelerometerHelper sharedInstance];
     [LocationHelper sharedInstance];
     
-    mmAudio = MMAudio::instance();
-    mmAudio->start();
+    // initialize audio!
+    [[MobileMusicCoreBridge sharedInstance] initializeAudio];
     
     return YES;
 }
@@ -68,7 +63,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    delete mmAudio;
+    [[MobileMusicCoreBridge sharedInstance] terminateAudio];
 }
 
 @end

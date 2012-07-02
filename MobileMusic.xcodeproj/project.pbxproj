@@ -14,7 +14,7 @@
 		4D8DAE431592D1C400A6B60C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE421592D1C400A6B60C /* CoreGraphics.framework */; };
 		4D8DAE451592D1C400A6B60C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE441592D1C400A6B60C /* GLKit.framework */; };
 		4D8DAE471592D1C400A6B60C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE461592D1C400A6B60C /* OpenGLES.framework */; };
-		4DF315CB15A12C5300A1C304 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3154415A12C5300A1C304 /* AppDelegate.mm */; };
+		4DF315CB15A12C5300A1C304 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3154415A12C5300A1C304 /* AppDelegate.m */; };
 		4DF315CC15A12C5300A1C304 /* Flare.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3154715A12C5300A1C304 /* Flare.mm */; };
 		4DF315CD15A12C5300A1C304 /* FlareSound.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3154915A12C5300A1C304 /* FlareSound.mm */; };
 		4DF315CE15A12C5300A1C304 /* AccelerometerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3154C15A12C5300A1C304 /* AccelerometerHelper.m */; };
@@ -30,6 +30,7 @@
 		4DF315E215A12F8600A1C304 /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF315E115A12F8600A1C304 /* LocationHelper.m */; };
 		4DF315ED15A12FFD00A1C304 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF315EC15A12FFD00A1C304 /* CoreLocation.framework */; };
 		4DF315EF15A131FC00A1C304 /* libstk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF315C615A12C5300A1C304 /* libstk.a */; };
+		4DF319C715A20E78003E04F5 /* MobileMusicCoreBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DF319C615A20E78003E04F5 /* MobileMusicCoreBridge.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,7 +147,7 @@
 		4D8DAE441592D1C400A6B60C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		4D8DAE461592D1C400A6B60C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		4DF3154315A12C5300A1C304 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4DF3154415A12C5300A1C304 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		4DF3154415A12C5300A1C304 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4DF3154515A12C5300A1C304 /* CircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularBuffer.h; sourceTree = "<group>"; };
 		4DF3154615A12C5300A1C304 /* Flare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flare.h; sourceTree = "<group>"; };
 		4DF3154715A12C5300A1C304 /* Flare.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Flare.mm; sourceTree = "<group>"; };
@@ -278,6 +279,8 @@
 		4DF315E015A12F8600A1C304 /* LocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHelper.h; sourceTree = "<group>"; };
 		4DF315E115A12F8600A1C304 /* LocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHelper.m; sourceTree = "<group>"; };
 		4DF315EC15A12FFD00A1C304 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4DF319C515A20E78003E04F5 /* MobileMusicCoreBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileMusicCoreBridge.h; sourceTree = "<group>"; };
+		4DF319C615A20E78003E04F5 /* MobileMusicCoreBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MobileMusicCoreBridge.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -463,6 +466,7 @@
 		4D8DAE481592D1C400A6B60C /* MobileMusic */ = {
 			isa = PBXGroup;
 			children = (
+				4DF319C315A20E5E003E04F5 /* core */,
 				4DF3154215A12C5300A1C304 /* classes */,
 				4DF3155215A12C5300A1C304 /* gfx */,
 				4DF3155715A12C5300A1C304 /* momu */,
@@ -478,7 +482,7 @@
 			children = (
 				4DF3154A15A12C5300A1C304 /* helpers */,
 				4DF3154315A12C5300A1C304 /* AppDelegate.h */,
-				4DF3154415A12C5300A1C304 /* AppDelegate.mm */,
+				4DF3154415A12C5300A1C304 /* AppDelegate.m */,
 				4DF3154515A12C5300A1C304 /* CircularBuffer.h */,
 				4DF3154615A12C5300A1C304 /* Flare.h */,
 				4DF3154715A12C5300A1C304 /* Flare.mm */,
@@ -672,6 +676,15 @@
 			path = "supporting files";
 			sourceTree = "<group>";
 		};
+		4DF319C315A20E5E003E04F5 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				4DF319C515A20E78003E04F5 /* MobileMusicCoreBridge.h */,
+				4DF319C615A20E78003E04F5 /* MobileMusicCoreBridge.mm */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -735,7 +748,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DF315CB15A12C5300A1C304 /* AppDelegate.mm in Sources */,
+				4DF315CB15A12C5300A1C304 /* AppDelegate.m in Sources */,
 				4DF315CC15A12C5300A1C304 /* Flare.mm in Sources */,
 				4DF315CD15A12C5300A1C304 /* FlareSound.mm in Sources */,
 				4DF315CE15A12C5300A1C304 /* AccelerometerHelper.m in Sources */,
@@ -746,6 +759,7 @@
 				4DF315D315A12C5300A1C304 /* mo_audio.mm in Sources */,
 				4DF315D815A12C5300A1C304 /* main.m in Sources */,
 				4DF315E215A12F8600A1C304 /* LocationHelper.m in Sources */,
+				4DF319C715A20E78003E04F5 /* MobileMusicCoreBridge.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

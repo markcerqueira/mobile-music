@@ -82,7 +82,7 @@
 
 - (CLHeading *)heading
 {
-    
+    return lastHeading;
 }
 
 #pragma mark - Private Functions
@@ -105,7 +105,7 @@
 {        
     lastLocation = newLocation.coordinate;
     
-    NSLog(@"[LocationHelper] location updated to: %f, %f", lastLocation.latitude, lastLocation.longitude);
+    // NSLog(@"[LocationHelper] location updated to: %f, %f", lastLocation.latitude, lastLocation.longitude);
 }
 
 - (void)locationManager:(CLLocationManager *)manager
