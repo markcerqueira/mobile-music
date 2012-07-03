@@ -36,6 +36,13 @@
 		4DCB84A615A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCB84A415A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib */; };
 		4DCB84A815A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCB84A715A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib */; };
 		4DCB84AB15A28081008B1BE8 /* MobileMusicUITouchWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB84AA15A28081008B1BE8 /* MobileMusicUITouchWindow.m */; };
+		4DD914BD15A2C4B200845342 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD914B915A2C4B200845342 /* Icon-72.png */; };
+		4DD914BE15A2C4B200845342 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD914BA15A2C4B200845342 /* Icon.png */; };
+		4DD914BF15A2C4B200845342 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD914BB15A2C4B200845342 /* Icon@2x.png */; };
+		4DD914C015A2C4B200845342 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD914BC15A2C4B200845342 /* iTunesArtwork.png */; };
+		4DD914C515A2C4FE00845342 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD914C215A2C4FE00845342 /* Default.png */; };
+		4DD914C615A2C4FE00845342 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD914C315A2C4FE00845342 /* Default@2x.png */; };
+		4DD914C715A2C4FE00845342 /* Default@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD914C415A2C4FE00845342 /* Default@2x~ipad.png */; };
 		4DEA9B8115A2B64B0099E648 /* TabBarNubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA9B7F15A2B64B0099E648 /* TabBarNubViewController.m */; };
 		4DEA9B8215A2B64B0099E648 /* TabBarNubViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEA9B8015A2B64B0099E648 /* TabBarNubViewController~iphone.xib */; };
 		4DEA9B8515A2BD4A0099E648 /* gafta.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DEA9B8415A2BD4A0099E648 /* gafta.png */; };
@@ -216,6 +223,13 @@
 		4DCB84A715A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AudioControlViewControllerViewController~iphone.xib"; sourceTree = "<group>"; };
 		4DCB84A915A28081008B1BE8 /* MobileMusicUITouchWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileMusicUITouchWindow.h; sourceTree = "<group>"; };
 		4DCB84AA15A28081008B1BE8 /* MobileMusicUITouchWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileMusicUITouchWindow.m; sourceTree = "<group>"; };
+		4DD914B915A2C4B200845342 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
+		4DD914BA15A2C4B200845342 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
+		4DD914BB15A2C4B200845342 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		4DD914BC15A2C4B200845342 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = SOURCE_ROOT; };
+		4DD914C215A2C4FE00845342 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		4DD914C315A2C4FE00845342 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		4DD914C415A2C4FE00845342 /* Default@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~ipad.png"; sourceTree = "<group>"; };
 		4DEA9B7E15A2B64B0099E648 /* TabBarNubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarNubViewController.h; sourceTree = "<group>"; };
 		4DEA9B7F15A2B64B0099E648 /* TabBarNubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarNubViewController.m; sourceTree = "<group>"; };
 		4DEA9B8015A2B64B0099E648 /* TabBarNubViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TabBarNubViewController~iphone.xib"; sourceTree = "<group>"; };
@@ -699,8 +713,15 @@
 		4DF3155B15A12C5300A1C304 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4DEA9B8415A2BD4A0099E648 /* gafta.png */,
+				4DD914C215A2C4FE00845342 /* Default.png */,
+				4DD914C315A2C4FE00845342 /* Default@2x.png */,
+				4DD914C415A2C4FE00845342 /* Default@2x~ipad.png */,
 				4DF3155C15A12C5300A1C304 /* flare.png */,
+				4DEA9B8415A2BD4A0099E648 /* gafta.png */,
+				4DD914B915A2C4B200845342 /* Icon-72.png */,
+				4DD914BA15A2C4B200845342 /* Icon.png */,
+				4DD914BB15A2C4B200845342 /* Icon@2x.png */,
+				4DD914BC15A2C4B200845342 /* iTunesArtwork.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -910,6 +931,13 @@
 				4DEA9B8215A2B64B0099E648 /* TabBarNubViewController~iphone.xib in Resources */,
 				4DEA9B8515A2BD4A0099E648 /* gafta.png in Resources */,
 				4DEA9B8715A2C1890099E648 /* TabBarNubViewController.xib in Resources */,
+				4DD914BD15A2C4B200845342 /* Icon-72.png in Resources */,
+				4DD914BE15A2C4B200845342 /* Icon.png in Resources */,
+				4DD914BF15A2C4B200845342 /* Icon@2x.png in Resources */,
+				4DD914C015A2C4B200845342 /* iTunesArtwork.png in Resources */,
+				4DD914C515A2C4FE00845342 /* Default.png in Resources */,
+				4DD914C615A2C4FE00845342 /* Default@2x.png in Resources */,
+				4DD914C715A2C4FE00845342 /* Default@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
