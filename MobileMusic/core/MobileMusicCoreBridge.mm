@@ -50,6 +50,11 @@
     delete coreBridge;
 }
 
+- (void)sliderValueChangedTo:(float)sliderValue
+{
+    // call into the audio-layer here with something
+}
+
 @end
 
 #pragma mark - C++ Bridge

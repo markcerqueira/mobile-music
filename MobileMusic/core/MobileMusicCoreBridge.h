@@ -27,6 +27,8 @@
 // call on app termination to clean up audio
 - (void)terminateAudio;
 
+- (void)sliderValueChangedTo:(float)sliderValue;
+
 @end
 
 #endif

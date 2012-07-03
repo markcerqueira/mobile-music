@@ -6,6 +6,7 @@
 //
 
 #import "AudioControlViewControllerViewController.h"
+#import "MobileMusicCoreBridge.h"
 
 @interface AudioControlViewControllerViewController ()
 
@@ -13,31 +14,29 @@
 
 @implementation AudioControlViewControllerViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
+@synthesize slider;
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+
+    self.slider = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
 	return YES;
+}
+
+#pragma mark - Actions
+
+- (IBAction)sliderValueChanged:(id)sender
+{
+    UISlider *theSlider = (UISlider *)sender;
+    
+    NSLog(@"[AudioControlViewController] slider value changed to %f", theSlider.value);
+    
+    [[MobileMusicCoreBridge sharedInstance] sliderValueChangedTo:theSlider.value];
 }
 
 @end
