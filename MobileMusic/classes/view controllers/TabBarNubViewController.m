@@ -6,6 +6,7 @@
 //
 
 #import "TabBarNubViewController.h"
+#import "MobileMusicCoreBridge.h"
 
 @interface TabBarView ()
 
@@ -172,6 +173,8 @@
     int selectedComponent = theSegmentedControl.selectedSegmentIndex;
     
     NSLog(@"[TabBarNubViewController] selected segment is %d", selectedComponent);
+    
+    [[MobileMusicCoreBridge sharedInstance] segmentedControlValueChangedTo:selectedComponent];
 }
 
 - (IBAction)sliderLeftChanged:(id)sender

@@ -36,9 +36,12 @@ public:
         NOISE_MODE,
     };
     
+    static void setGlobalSoundMode(SoundMode mode) { s_globalMode = mode; }
     void setSoundMode(SoundMode mode) { m_mode = mode; }
     
 private:
+    static SoundMode s_globalMode;
+    
     const float m_fs;
     
     float m_gain;

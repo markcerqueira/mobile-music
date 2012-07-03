@@ -10,13 +10,16 @@
 #include "mtof.h"
 
 
+FlareSound::SoundMode FlareSound::s_globalMode = BLIT_MODE;
+
+
 FlareSound::FlareSound(float fs) :
 m_fs(fs)
 {
     m_gain = 0;
     m_freq = 220;
     
-    m_mode = WAVFILE_MODE;
+    m_mode = s_globalMode;
 }
 
 FlareSound::~FlareSound()
@@ -30,31 +33,53 @@ void FlareSound::init()
     m_gain = 1;
     m_freq = 220;
     
-    m_wg.setPreset(3);
+    switch(m_mode)
+    {
+        case BANDEDWG_MODE:
+            m_wg.setPreset(3);
+            break;
+            
+        case BLIT_MODE:
+            m_blit.setHarmonics(12);
+            break;
     
-    m_blit.setHarmonics(12);
-    
-    m_noise.setSeed(time(NULL));
-    m_noiseFilter.setResonance(m_freq, 0.5, true);
-    m_noiseFilter.setEqualGainZeroes();
-    
-    std::string filepath = [[[NSBundle mainBundle] pathForResource:@"spencer-ahh.wav" ofType:@""] UTF8String];
-    m_wav.openFile(filepath);
+        case NOISE_MODE:
+            m_noise.setSeed(time(NULL));
+            m_noiseFilter.setResonance(m_freq, 0.5, true);
+            m_noiseFilter.setEqualGainZeroes();
+            break;
+            
+        case WAVFILE_MODE:
+            std::string filepath = [[[NSBundle mainBundle] pathForResource:@"spencer-ahh.wav" ofType:@""] UTF8String];
+            m_wav.openFile(filepath);
+            break;
+    }
 }
 
 void FlareSound::setFrequency(float f)
 {
     m_freq = f;
     
-    m_blit.setFrequency(m_freq);
-    
-    m_wg.noteOn(m_freq, 1.0);
-    
-    m_noiseFilter.setResonance(m_freq, 0.99999, true);
-    m_noiseFilter.setEqualGainZeroes();
-    
-    float base = mtof(56);
-    m_wav.setRate(m_freq/base);
+    switch(m_mode)
+    {
+        case BANDEDWG_MODE:
+            m_wg.noteOn(m_freq, 1.0);
+            break;
+            
+        case BLIT_MODE:
+            m_blit.setFrequency(m_freq);
+            break;
+            
+        case NOISE_MODE:
+            m_noiseFilter.setResonance(m_freq, 0.99999, true);
+            m_noiseFilter.setEqualGainZeroes();
+            break;
+            
+        case WAVFILE_MODE:
+            float base = mtof(56);
+            m_wav.setRate(m_freq/base);
+            break;
+    }
 }
 
 float FlareSound::tick()
@@ -63,7 +88,7 @@ float FlareSound::tick()
     switch(m_mode)
     {
         case BLIT_MODE:
-            samp = m_gain * m_blit.tick();
+            samp = m_gain * m_blit.tick() * 0.25;
             break;
         case BANDEDWG_MODE:
             samp = m_gain * m_wg.tick();

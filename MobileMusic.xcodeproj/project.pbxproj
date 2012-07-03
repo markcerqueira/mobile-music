@@ -716,10 +716,10 @@
 			isa = PBXGroup;
 			children = (
 				092EBC5615A2C5210006391D /* spencer-ahh.wav */,
+				4DF3155C15A12C5300A1C304 /* flare.png */,
 				4DD914C215A2C4FE00845342 /* Default.png */,
 				4DD914C315A2C4FE00845342 /* Default@2x.png */,
 				4DD914C415A2C4FE00845342 /* Default@2x~ipad.png */,
-				4DF3155C15A12C5300A1C304 /* flare.png */,
 				4DEA9B8415A2BD4A0099E648 /* gafta.png */,
 				4DD914B915A2C4B200845342 /* Icon-72.png */,
 				4DD914BA15A2C4B200845342 /* Icon.png */,

@@ -28,6 +28,7 @@
 - (void)terminateAudio;
 
 - (void)sliderValueChangedTo:(float)sliderValue;
+- (void)segmentedControlValueChangedTo:(int)segControlValue;
 
 @end
 

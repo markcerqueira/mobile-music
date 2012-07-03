@@ -8,6 +8,7 @@
 #import "MobileMusicCoreBridge.h"
 #import "MMAudio.h"
 #import "Flare.h"
+#import "FlareSound.h"
 
 @interface MobileMusicCoreBridge ()
 {
@@ -55,6 +56,28 @@
 {
     // call into the audio-layer here with something
     Flare::setBreathingRate(1.0/(0.5+(1-sliderValue)*3.5));
+}
+
+- (void)segmentedControlValueChangedTo:(int)segControlValue
+{
+    FlareSound::SoundMode mode;
+    switch(segControlValue)
+    {
+        case 0:
+            mode = FlareSound::BLIT_MODE;
+            break;
+        case 1:
+            mode = FlareSound::BANDEDWG_MODE;
+            break;
+        case 2:
+            mode = FlareSound::WAVFILE_MODE;
+            break;
+        case 3:
+            mode = FlareSound::NOISE_MODE;
+            break;
+    }
+    
+    FlareSound::setGlobalSoundMode(mode);
 }
 
 @end
