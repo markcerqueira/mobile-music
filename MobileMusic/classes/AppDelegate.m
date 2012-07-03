@@ -14,6 +14,8 @@
 #import "AccelerometerHelper.h"
 #import "LocationHelper.h"
 
+#import "NetworkingExample.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -34,6 +36,8 @@
     
     // initialize audio!
     [[MobileMusicCoreBridge sharedInstance] initializeAudio];
+    
+    [NetworkingExample returnLatestTopTweets:2];
     
     return YES;
 }
