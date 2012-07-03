@@ -1,12 +1,12 @@
 //
-//  ViewController.m
+//  GLViewController.m
 //  MobileMusic
 //
 //  Created by Mark on 6/20/12.
 //  Copyright (c) 2012 Tronic 2012. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GLViewController.h"
 #import "Flare.h"
 #import "HSV.h"
 #import <map>
@@ -37,7 +37,7 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
 }
 
 
-@interface ViewController ()
+@interface GLViewController ()
 {
     GLKMatrix4 _projectionMatrix;
     GLKMatrix4 _modelviewMatrix;
@@ -59,7 +59,7 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
 
 @end
 
-@implementation ViewController
+@implementation GLViewController
 
 @synthesize context = _context;
 
@@ -166,6 +166,34 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
     
     if(flare1)
         flare1->render();
+}
+
+- (void)handleTouches:(NSSet*)touches withEvent:(UIEvent *)event
+{
+    // we need to map these set of touches to the respective touch began/end/cancel events
+    // by checking the "phase" of UITouch, we can determine where each touch belongs
+    NSMutableSet *touchesBeganSet = [NSMutableSet set];
+    NSMutableSet *touchesMovedSet = [NSMutableSet set];
+    NSMutableSet *touchesEndedSet = [NSMutableSet set];
+    NSMutableSet *touchesCancelledSet = [NSMutableSet set];
+
+    for ( UITouch *touch in touches)
+    {
+        switch ( touch.phase )
+        {
+            case UITouchPhaseBegan: [touchesBeganSet addObject:touch]; break;
+            case UITouchPhaseMoved: [touchesMovedSet addObject:touch]; break;
+            case UITouchPhaseEnded: [touchesEndedSet addObject:touch]; break;
+            case UITouchPhaseCancelled: [touchesCancelledSet addObject:touch]; break;
+                
+            default: break;
+        }
+    }
+    
+    [self touchesBegan:touchesBeganSet withEvent:event];
+    [self touchesMoved:touchesMovedSet withEvent:event];
+    [self touchesCancelled:touchesCancelledSet withEvent:event];
+    [self touchesEnded:touchesEndedSet withEvent:event];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
