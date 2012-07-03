@@ -7,6 +7,7 @@
 
 #import "MobileMusicCoreBridge.h"
 #import "MMAudio.h"
+#import "Flare.h"
 
 @interface MobileMusicCoreBridge ()
 {
@@ -53,6 +54,7 @@
 - (void)sliderValueChangedTo:(float)sliderValue
 {
     // call into the audio-layer here with something
+    Flare::setBreathingRate(1.0/(0.5+(1-sliderValue)*3.5));
 }
 
 @end

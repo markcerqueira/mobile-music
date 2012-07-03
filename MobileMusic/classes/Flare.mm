@@ -14,6 +14,7 @@
 #import "mtof.h"
 
 
+float Flare::s_breathingRate = 1.0/4.0;
 GLuint Flare::tex = 0;
 
 Flare::Flare()
@@ -27,6 +28,7 @@ Flare::Flare()
     
     m_pitch = 60;
     m_gain = 1;
+    m_breathPhase = 0;
 }
 
 Flare::~Flare()
@@ -80,9 +82,6 @@ void Flare::init()
 void Flare::setLocation(GLvertex3f loc)
 {
     this->loc = loc;
-    
-    // reset pitch
-//    setPitch(m_pitch);
 }
 
 
@@ -92,10 +91,6 @@ void Flare::setPitch(float p)
     
     if(fs != NULL)
     {
-//        float sign = 1;
-//        if(loc.y == 0) sign = 1;
-//        else sign = loc.y/fabs(loc.y);
-//        fs->setFrequency(mtof(m_pitch) + sign*(5-loc.magnitudeSquared())*2);
         fs->setFrequency(mtof(m_pitch));
     }
 }
@@ -116,12 +111,14 @@ void Flare::update(float dt)
 {
     t += dt;
     
-    float f_scale = 1.0/4.0;
-    scale = 1 + 0.16*sinf(2*M_PI*t*f_scale);
+    scale = 1 + 0.16*sinf(2*M_PI*m_breathPhase);
     
-    float f_alpha = f_scale;
     GLcolor4f c = m_color;
-    c.a = 1 + 0.1*sinf(2*M_PI*t*f_alpha);
+    c.a = 1 + 0.1*sinf(2*M_PI*m_breathPhase);
+    
+    m_breathPhase += dt*s_breathingRate;
+    if(m_breathPhase > 1)
+        m_breathPhase -= 1;
     
     square[0].color = square[1].color = square[2].color = square[3].color = c;
 }

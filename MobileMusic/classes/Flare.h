@@ -16,6 +16,8 @@ class FlareSound;
 class Flare
 {
 public:
+    static void setBreathingRate(float rate) { s_breathingRate = rate; }
+    
     Flare();
     ~Flare();
     
@@ -30,6 +32,8 @@ public:
     void mute(bool m);
     
 protected:
+    static float s_breathingRate;
+    
     static GLuint tex;
     GLgeoprimf square[4];
     
@@ -37,6 +41,7 @@ protected:
     GLvertex3f loc;
     float scale;
     float t;
+    float m_breathPhase;
     
     FlareSound * fs;
     float m_pitch;
