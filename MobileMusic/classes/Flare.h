@@ -29,8 +29,6 @@ public:
     void setPitch(float p);
     void mute(bool m);
     
-    void fadeOut();
-    
 protected:
     static GLuint tex;
     GLgeoprimf square[4];

@@ -12,8 +12,9 @@
 #import <map>
 
 
+// B-flat -- the first note in our progression
 static const int g_rootNote = 46;
-static int g_lastRoot = g_rootNote;
+// our scale -- inverted 7th chord arpeggio, across 3 octaves
 static const int g_scale[] =
 { 
     0,   4,  7,  9, 
@@ -23,10 +24,14 @@ static const int g_scale[] =
     21, 19, 16, 12,
      9,  7,  4
 };
+// total length of the scale
 static const int g_scaleLength = sizeof(g_scale)/sizeof(int);
-static int g_scaleIndex = 0;
 
 
+//------------------------------------------------------------------------------
+// name: uiview2gl
+// desc: convert UIView coordinates to the OpenGL coordinate space
+//------------------------------------------------------------------------------
 GLvertex2f uiview2gl(CGPoint p, UIView * view)
 {
     GLvertex2f v;
@@ -47,15 +52,21 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
     
     Flare * flare1;
     
+    int lastRoot;
+    int scaleIndex;
     GLcolor4f currentColor;
 }
 
 @property (strong, nonatomic) EAGLContext *context;
 
+// setup OpenGL graphics
 - (void)setupGL;
+// shutdown OpenGL graphics and release related resources
 - (void)tearDownGL;
 
-- (void)allTouchesLeft;
+// called when all fingers lift off the touchscreen
+// advances to the next chord and picks out a new color for new flares
+- (void)advanceChord;
 
 @end
 
@@ -77,15 +88,24 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
     view.context = self.context;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     
+    // setup OpenGL
     [self setupGL];
     
+    // seed random number generator
     srandom(time(NULL));
     
+    lastRoot = g_rootNote;
+    scaleIndex = 0;
+    
+    if(flare1 != NULL) { delete flare1; flare1 = NULL; }
+    
+    // create the initial flare
     flare1 = new Flare;
     flare1->init();
     flare1->mute(true);
     
-    [self allTouchesLeft];
+    // "advance" the chord to make sure all parameters are in the right place
+    [self advanceChord];
 }
 
 - (void)viewDidUnload
@@ -98,6 +118,8 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
         [EAGLContext setCurrentContext:nil];
     }
 	self.context = nil;
+    
+    if(flare1 != NULL) { delete flare1; flare1 = NULL; }
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,43 +149,72 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
     [EAGLContext setCurrentContext:self.context];
 }
 
+- (void)advanceChord
+{
+    // choose new random color based on hue-saturation-value
+    GLcolor4f hsv;
+    // random hue between [0,1]
+    hsv.h = ((float) random()) / INT_MAX;
+    // random saturation between [0.2,0.5]
+    hsv.s = 0.2 + 0.3*(((float) random()) / INT_MAX);
+    // random brightness between [0.8,1.0]
+    hsv.b = 0.8 + 0.2*(((float) random()) / INT_MAX);
+    currentColor = hsv2rgb(hsv);
+    
+    // descend the root note a major third
+    lastRoot -= 4;
+    // but constrain it to within the octave above the initial root note
+    while(lastRoot < g_rootNote)
+        lastRoot += 12;
+    while(lastRoot >= g_rootNote+12)
+        lastRoot -= 12;
+}
+
 #pragma mark - GLKView and GLKViewController delegate methods
 
 - (void)update
 {
+    // set projection matrix
     float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
-//    _projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
     _projectionMatrix = GLKMatrix4MakeOrtho(-1, 1, 1.0/aspect, -1.0/aspect, 0.1, 100);
     
+    // update touch-flares
     for(std::map<UITouch *, Flare *>::iterator i = flares.begin(); i != flares.end(); i++)
     {
         Flare * f = i->second;
         f->update(self.timeSinceLastUpdate);
     }
     
-    if(flare1)
+    // update the initial flare, if there is one
+    if(flare1 != NULL)
         flare1->update(self.timeSinceLastUpdate);
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
+    // clear the background to black
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
+    // set project matrix
     glMatrixMode(GL_PROJECTION);
     glLoadMatrixf(_projectionMatrix.m);
     
+    // set model + view matrix
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-        
+    
+    // pull the camera back a bit
     glTranslatef(0, 0, -2);
     
+    // render all active flares
     for(std::map<UITouch *, Flare *>::iterator i = flares.begin(); i != flares.end(); i++)
     {
         Flare * f = i->second;
         f->render();
     }
     
+    // render the "solo" flare, if its set
     if(flare1)
         flare1->render();
 }
@@ -172,25 +223,33 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
 {
     for(UITouch * touch in touches)
     {
+        // the flare that will be associated with this touch
         Flare * f = NULL;
-        if(flare1 == NULL)
+        
+        if(flare1 != NULL)
         {
-            f = new Flare;
-            f->init();
-        }
-        else
-        {
+            // use the initial flare if available
             f = flare1;
             flare1->mute(false);
             flare1 = NULL;
         }
-        
+        else
+        {
+            // otherwise create a new flare
+            f = new Flare;
+            f->init();
+        }
+
+        // set location
         f->setLocation(uiview2gl([touch locationInView:self.view], self.view));
         
-        f->setPitch(g_lastRoot + g_scale[g_scaleIndex++ % g_scaleLength]);
+        // set pitch of the flare
+        f->setPitch(lastRoot + g_scale[scaleIndex++ % g_scaleLength]);
         
+        // set the flare's color
         f->setColor(currentColor);
         
+        // link the touch -> flare
         flares[touch] = f;
     }
 }
@@ -199,9 +258,12 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
 {
     for(UITouch * touch in touches)
     {
+        // each touch should have an associated flare, but double check
         if(flares.count(touch) == 0) continue;
         
+        // get the flare for this touch
         Flare * f = flares[touch];
+        // update its location
         f->setLocation(uiview2gl([touch locationInView:self.view], self.view));
     }
 }
@@ -210,47 +272,40 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
 {
     for(UITouch * touch in touches)
     {
+        // each touch should have an associated flare, but double check
         if(flares.count(touch) == 0) continue;
         
+        // get the flare for this touch
         Flare * f = flares[touch];
         
-        if(flares.size() == 1) // last item
+        if(flares.size() == 1)
         {
-            assert(flare1 == NULL);
+            // this is the last flare, so leave it visible/inaudible as "flare1"
+            
+            // update its final location
             f->setLocation(uiview2gl([touch locationInView:self.view], self.view));
             flare1 = f;
             flare1->mute(true);
             
-            [self allTouchesLeft];
+            // advance to the next root note/chord
+            [self advanceChord];
         }
         else
         {
+            // this is not the last flare, so we can simply delete it
             delete f;
             f = NULL;
         }
         
+        // remove the mapping from touch -> flare
         flares.erase(touch);
     }
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    // treat a touch cancellation the same as a touch end
     [self touchesEnded:touches withEvent:event];
-}
-
-- (void)allTouchesLeft
-{
-    GLcolor4f hsv;
-    hsv.h = ((float) random()) / INT_MAX;
-    hsv.s = 0.2 + 0.3*(((float) random()) / INT_MAX);
-    hsv.b = 0.8 + 0.2*(((float) random()) / INT_MAX);
-    currentColor = hsv2rgb(hsv);
-    
-    g_lastRoot -= 4;
-    while(g_lastRoot < g_rootNote)
-        g_lastRoot += 12;
-    while(g_lastRoot >= g_rootNote+12)
-        g_lastRoot -= 12;
 }
 
 @end
