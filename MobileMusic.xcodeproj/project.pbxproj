@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		092EBC5715A2C5210006391D /* spencer-ahh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 092EBC5615A2C5210006391D /* spencer-ahh.wav */; };
 		09C89BF0159BFFF600C9EFB2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89BED159BFFF500C9EFB2 /* AudioToolbox.framework */; };
 		09C89BF2159BFFF600C9EFB2 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89BEF159BFFF500C9EFB2 /* CoreAudio.framework */; };
 		4D8DAE3F1592D1C400A6B60C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE3E1592D1C400A6B60C /* UIKit.framework */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		092EBC5615A2C5210006391D /* spencer-ahh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "spencer-ahh.wav"; sourceTree = "<group>"; };
 		09C89BED159BFFF500C9EFB2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		09C89BEF159BFFF500C9EFB2 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		09C89C17159E754500C9EFB2 /* ADSR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSR.h; sourceTree = "<group>"; };
@@ -210,7 +212,7 @@
 		4DCB84A315A27EE7008B1BE8 /* AudioControlViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioControlViewControllerViewController.m; sourceTree = "<group>"; };
 		4DCB84A415A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioControlViewControllerViewController.xib; sourceTree = "<group>"; };
 		4DCB84A715A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AudioControlViewControllerViewController~iphone.xib"; sourceTree = "<group>"; };
-		4DCB84A915A28081008B1BE8 /* MobileMusicUITouchWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; path = MobileMusicUITouchWindow.h; sourceTree = "<group>"; };
+		4DCB84A915A28081008B1BE8 /* MobileMusicUITouchWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileMusicUITouchWindow.h; sourceTree = "<group>"; };
 		4DCB84AA15A28081008B1BE8 /* MobileMusicUITouchWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileMusicUITouchWindow.m; sourceTree = "<group>"; };
 		4DF3154315A12C5300A1C304 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4DF3154415A12C5300A1C304 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -686,6 +688,7 @@
 		4DF3155B15A12C5300A1C304 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				092EBC5615A2C5210006391D /* spencer-ahh.wav */,
 				4DF3155C15A12C5300A1C304 /* flare.png */,
 			);
 			path = Resources;
@@ -893,6 +896,7 @@
 				4DCB84A115A27E91008B1BE8 /* GLViewController~iphone.xib in Resources */,
 				4DCB84A615A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib in Resources */,
 				4DCB84A815A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib in Resources */,
+				092EBC5715A2C5210006391D /* spencer-ahh.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

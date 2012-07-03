@@ -13,6 +13,7 @@
 #include "Blit.h"
 #include "Noise.h"
 #include "BiQuad.h"
+#include "FileWvIn.h"
 
 class FlareSound
 {
@@ -50,6 +51,8 @@ private:
     
     stk::Noise m_noise;
     stk::BiQuad m_noiseFilter;
+    
+    stk::FileWvIn m_wav;
 };
 
 #endif
