@@ -11,6 +11,8 @@
 
 #include "BandedWG.h"
 #include "Blit.h"
+#include "Noise.h"
+#include "BiQuad.h"
 
 class FlareSound
 {
@@ -22,19 +24,32 @@ public:
     float tick();
     void destroy();
     
-    void setFrequency(float f) { m_freq = f; m_blit.setFrequency(f); m_wg.noteOn(f, 1.0); }
+    void setFrequency(float f);
     void setGain(float g) { m_gain = g; }
+    
+    enum SoundMode
+    {
+        BLIT_MODE,
+        BANDEDWG_MODE,
+        WAVFILE_MODE,
+        NOISE_MODE,
+    };
+    
+    void setSoundMode(SoundMode mode) { m_mode = mode; }
     
 private:
     const float m_fs;
     
     float m_gain;
     float m_freq;
-    float m_modulator_phase;
-    float m_carrier_phase;
+    
+    SoundMode m_mode;
     
     stk::BandedWG m_wg;
     stk::Blit m_blit;
+    
+    stk::Noise m_noise;
+    stk::BiQuad m_noiseFilter;
 };
 
 #endif

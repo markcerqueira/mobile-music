@@ -14,8 +14,8 @@ m_fs(fs)
 {
     m_gain = 0;
     m_freq = 220;
-    m_carrier_phase = 0;
-    m_modulator_phase = 0;
+    
+    m_mode = BLIT_MODE;
 }
 
 FlareSound::~FlareSound()
@@ -28,33 +28,43 @@ void FlareSound::init()
 {
     m_gain = 1;
     m_freq = 220;
-    m_carrier_phase = 0;
-    m_modulator_phase = 0;
     
     m_wg.setPreset(3);
+    
     m_blit.setHarmonics(12);
+    
+    m_noise.setSeed(time(NULL));
+    m_noiseFilter.setResonance(m_freq, 0.5, true);
+    m_noiseFilter.setEqualGainZeroes();
 }
 
+void FlareSound::setFrequency(float f)
+{
+    m_freq = f;
+    
+    m_blit.setFrequency(m_freq);
+    m_wg.noteOn(m_freq, 1.0);
+    
+    m_noiseFilter.setResonance(m_freq, 0.99999, true);
+    m_noiseFilter.setEqualGainZeroes();
+}
 
 float FlareSound::tick()
 {
-    float mod_gain = 1;
-    float mod_freq = m_freq;
-    
-//    float modulator = mod_gain * sinf(2.0f*M_PI*m_modulator_phase);
-//    float samp = m_gain * sinf(2.0f*M_PI*(m_carrier_phase+modulator));
-    
-//    float samp = m_gain * sinf(2.0f*M_PI*m_carrier_phase);
-    
-    float samp = m_gain * m_blit.tick();
-    
-    m_modulator_phase += mod_freq/m_fs;
-    while(m_modulator_phase > 1)
-        m_modulator_phase -= 1;
-    
-    m_carrier_phase += m_freq/m_fs;
-    while(m_carrier_phase > 1)
-        m_carrier_phase -= 1;
+    float samp = 0;
+    switch(m_mode)
+    {
+        case BLIT_MODE:
+            samp = m_gain * m_blit.tick();
+            break;
+        case BANDEDWG_MODE:
+            break;
+        case WAVFILE_MODE:
+            break;
+        case NOISE_MODE:
+            samp = m_gain * m_noiseFilter.tick(m_noise.tick()*0.001);
+            break;
+    }
     
     return samp;
 }
