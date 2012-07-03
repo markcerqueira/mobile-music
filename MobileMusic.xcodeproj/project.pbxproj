@@ -36,6 +36,10 @@
 		4DCB84A615A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCB84A415A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib */; };
 		4DCB84A815A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCB84A715A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib */; };
 		4DCB84AB15A28081008B1BE8 /* MobileMusicUITouchWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB84AA15A28081008B1BE8 /* MobileMusicUITouchWindow.m */; };
+		4DEA9B8115A2B64B0099E648 /* TabBarNubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA9B7F15A2B64B0099E648 /* TabBarNubViewController.m */; };
+		4DEA9B8215A2B64B0099E648 /* TabBarNubViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEA9B8015A2B64B0099E648 /* TabBarNubViewController~iphone.xib */; };
+		4DEA9B8515A2BD4A0099E648 /* gafta.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DEA9B8415A2BD4A0099E648 /* gafta.png */; };
+		4DEA9B8715A2C1890099E648 /* TabBarNubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEA9B8615A2C1890099E648 /* TabBarNubViewController.xib */; };
 		4DF315CB15A12C5300A1C304 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3154415A12C5300A1C304 /* AppDelegate.m */; };
 		4DF315CC15A12C5300A1C304 /* Flare.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3154715A12C5300A1C304 /* Flare.mm */; };
 		4DF315CD15A12C5300A1C304 /* FlareSound.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3154915A12C5300A1C304 /* FlareSound.mm */; };
@@ -210,8 +214,13 @@
 		4DCB84A315A27EE7008B1BE8 /* AudioControlViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioControlViewControllerViewController.m; sourceTree = "<group>"; };
 		4DCB84A415A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioControlViewControllerViewController.xib; sourceTree = "<group>"; };
 		4DCB84A715A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AudioControlViewControllerViewController~iphone.xib"; sourceTree = "<group>"; };
-		4DCB84A915A28081008B1BE8 /* MobileMusicUITouchWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; path = MobileMusicUITouchWindow.h; sourceTree = "<group>"; };
+		4DCB84A915A28081008B1BE8 /* MobileMusicUITouchWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileMusicUITouchWindow.h; sourceTree = "<group>"; };
 		4DCB84AA15A28081008B1BE8 /* MobileMusicUITouchWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileMusicUITouchWindow.m; sourceTree = "<group>"; };
+		4DEA9B7E15A2B64B0099E648 /* TabBarNubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarNubViewController.h; sourceTree = "<group>"; };
+		4DEA9B7F15A2B64B0099E648 /* TabBarNubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarNubViewController.m; sourceTree = "<group>"; };
+		4DEA9B8015A2B64B0099E648 /* TabBarNubViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TabBarNubViewController~iphone.xib"; sourceTree = "<group>"; };
+		4DEA9B8415A2BD4A0099E648 /* gafta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gafta.png; sourceTree = "<group>"; };
+		4DEA9B8615A2C1890099E648 /* TabBarNubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarNubViewController.xib; sourceTree = "<group>"; };
 		4DF3154315A12C5300A1C304 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4DF3154415A12C5300A1C304 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4DF3154515A12C5300A1C304 /* CircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularBuffer.h; sourceTree = "<group>"; };
@@ -626,6 +635,10 @@
 				4DCB84A315A27EE7008B1BE8 /* AudioControlViewControllerViewController.m */,
 				4DCB84A415A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib */,
 				4DCB84A715A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib */,
+				4DEA9B7E15A2B64B0099E648 /* TabBarNubViewController.h */,
+				4DEA9B7F15A2B64B0099E648 /* TabBarNubViewController.m */,
+				4DEA9B8615A2C1890099E648 /* TabBarNubViewController.xib */,
+				4DEA9B8015A2B64B0099E648 /* TabBarNubViewController~iphone.xib */,
 			);
 			path = "view controllers";
 			sourceTree = "<group>";
@@ -686,6 +699,7 @@
 		4DF3155B15A12C5300A1C304 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4DEA9B8415A2BD4A0099E648 /* gafta.png */,
 				4DF3155C15A12C5300A1C304 /* flare.png */,
 			);
 			path = Resources;
@@ -893,6 +907,9 @@
 				4DCB84A115A27E91008B1BE8 /* GLViewController~iphone.xib in Resources */,
 				4DCB84A615A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib in Resources */,
 				4DCB84A815A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib in Resources */,
+				4DEA9B8215A2B64B0099E648 /* TabBarNubViewController~iphone.xib in Resources */,
+				4DEA9B8515A2BD4A0099E648 /* gafta.png in Resources */,
+				4DEA9B8715A2C1890099E648 /* TabBarNubViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -932,6 +949,7 @@
 				4DCB849F15A27E91008B1BE8 /* GLViewController.mm in Sources */,
 				4DCB84A515A27EE7008B1BE8 /* AudioControlViewControllerViewController.m in Sources */,
 				4DCB84AB15A28081008B1BE8 /* MobileMusicUITouchWindow.m in Sources */,
+				4DEA9B8115A2B64B0099E648 /* TabBarNubViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

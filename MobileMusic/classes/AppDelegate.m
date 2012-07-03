@@ -15,6 +15,7 @@
 #import "AccelerometerHelper.h"
 #import "LocationHelper.h"
 #import "NetworkingExample.h"
+#import "TabBarNubViewController.h"
 
 @interface AppDelegate ()
 
@@ -45,6 +46,13 @@
     
     // setup navigation view controller with audio control view controller at the root
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:audioControlVC];
+    
+    [self.navigationController.view addSubview:[TabBarNubViewController sharedInstance].view];
+    
+    [TabBarNubViewController sharedInstance].view.frame = CGRectMake( 0, 
+                                                                      self.touchWindow.frame.size.height, 
+                                                                      self.touchWindow.frame.size.width,
+                                                                      self.touchWindow.frame.size.height );
     
     // hide navigation bar
     [self.navigationController setNavigationBarHidden:YES];
