@@ -8,27 +8,58 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "MobileMusicUITouchWindow.h"
+#import "GLViewController.h"
+#import "AudioControlViewControllerViewController.h"
 #import "MobileMusicCoreBridge.h"
-
 #import "AccelerometerHelper.h"
 #import "LocationHelper.h"
-
 #import "NetworkingExample.h"
+
+@interface AppDelegate ()
+
+@property (strong, nonatomic) MobileMusicUITouchWindow *touchWindow;
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) GLViewController *GLviewController;
+ 
+@end
+
 
 @implementation AppDelegate
 
-@synthesize window = _window;
-@synthesize viewController = _viewController;
+@synthesize touchWindow;
+@synthesize navigationController;
+@synthesize GLviewController;
 
+// override point for customization after application launch
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // create our custom window that will pass touches nicely between UIKit and GL
+    self.touchWindow = [[MobileMusicUITouchWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+    // allocate our GL view controller
+    self.GLviewController = [[GLViewController alloc] init];
     
-    // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
+    // allocate our UIKit-based audio control dashboard
+    AudioControlViewControllerViewController *audioControlVC = [[AudioControlViewControllerViewController alloc] init];
+    
+    // setup navigation view controller with audio control view controller at the root
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:audioControlVC];
+    
+    // hide navigation bar
+    [self.navigationController setNavigationBarHidden:YES];
+    
+    // the navigation controller will be the root view of the whole app
+    self.touchWindow.rootViewController = self.navigationController;
+    
+    // add the GL view controller then push it to the back
+    [self.touchWindow addSubview:[self.GLviewController view]];
+    [self.touchWindow sendSubviewToBack:[self.GLviewController view]];
+
+    [self.touchWindow makeKeyAndVisible];
+    
+    // route touches to the GL view controller
+    [self.touchWindow setTouchDelegate:self.GLviewController];
     
     // initialize helpers
     [AccelerometerHelper sharedInstance];

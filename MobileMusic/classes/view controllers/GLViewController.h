@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GLViewController.h
 //  MobileMusic
 //
 //  Created by Mark on 6/20/12.
@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
 
-@interface ViewController : GLKViewController
+#import "MobileMusicUITouchWindow.h"
+
+@interface GLViewController : GLKViewController<MagicTouchDelegate>
 
 @end
