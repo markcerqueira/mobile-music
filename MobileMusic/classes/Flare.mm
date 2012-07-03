@@ -21,13 +21,9 @@ Flare::Flare()
 {
     t = 0;
     tex = 0;
-//    square[0] = GLgeoprimf();
-//    square[1] = GLgeoprimf();
-//    square[2] = GLgeoprimf();
-//    square[3] = GLgeoprimf();
     
-    square2[0] = GLtrif();
-    square2[1] = GLtrif();
+    square[0] = GLtrif();
+    square[1] = GLtrif();
     
     m_pitch = 60;
     m_gain = 1;
@@ -53,32 +49,32 @@ void Flare::init()
     
     // two triangles to form a square
     // vertices of each triangle
-    square2[0].a.vertex = GLvertex3f(-r, -r, 0);
-    square2[0].b.vertex = GLvertex3f(r, -r, 0);
-    square2[0].c.vertex = GLvertex3f(-r, r, 0);
+    square[0].a.vertex = GLvertex3f(-r, -r, 0);
+    square[0].b.vertex = GLvertex3f(r, -r, 0);
+    square[0].c.vertex = GLvertex3f(-r, r, 0);
     
-    square2[1].a.vertex = GLvertex3f(r, -r, 0);
-    square2[1].b.vertex = GLvertex3f(-r, r, 0);
-    square2[1].c.vertex = GLvertex3f(r, r, 0);
+    square[1].a.vertex = GLvertex3f(r, -r, 0);
+    square[1].b.vertex = GLvertex3f(-r, r, 0);
+    square[1].c.vertex = GLvertex3f(r, r, 0);
     
     // normal coordinates -- used for lighting calculations
     GLvertex3f n = GLvertex3f(0, 0, -1);
-    square2[0].a.normal = square2[0].b.normal = square2[0].c.normal = n;
-    square2[1].a.normal = square2[1].b.normal = square2[1].c.normal = n;
+    square[0].a.normal = square[0].b.normal = square[0].c.normal = n;
+    square[1].a.normal = square[1].b.normal = square[1].c.normal = n;
     
     // coordinates for texture mapping
-    square2[0].a.texcoord = GLvertex2f(0, 0);
-    square2[0].b.texcoord = GLvertex2f(1, 0);
-    square2[0].c.texcoord = GLvertex2f(0, 1);
+    square[0].a.texcoord = GLvertex2f(0, 0);
+    square[0].b.texcoord = GLvertex2f(1, 0);
+    square[0].c.texcoord = GLvertex2f(0, 1);
 
-    square2[1].a.texcoord = GLvertex2f(1, 0);
-    square2[1].b.texcoord = GLvertex2f(0, 1);
-    square2[1].c.texcoord = GLvertex2f(1, 1);
+    square[1].a.texcoord = GLvertex2f(1, 0);
+    square[1].b.texcoord = GLvertex2f(0, 1);
+    square[1].c.texcoord = GLvertex2f(1, 1);
     
     // color for each vertex
     GLcolor4f c = GLcolor4f(0.8, 0.75, 0.16, 1.0);
-    square2[0].a.color = square2[0].b.color = square2[0].c.color = c;
-    square2[1].a.color = square2[1].b.color = square2[1].c.color = c;
+    square[0].a.color = square[0].b.color = square[0].c.color = c;
+    square[1].a.color = square[1].b.color = square[1].c.color = c;
     
     loc = GLvertex2f(0, 0);
     
@@ -134,8 +130,8 @@ void Flare::update(float dt)
     if(m_breathPhase > 1)
         m_breathPhase -= 1;
     
-    square2[0].a.color = square2[0].b.color = square2[0].c.color = c;
-    square2[1].a.color = square2[1].b.color = square2[1].c.color = c;
+    square[0].a.color = square[0].b.color = square[0].c.color = c;
+    square[1].a.color = square[1].b.color = square[1].c.color = c;
 }
 
 
@@ -159,19 +155,19 @@ void Flare::render()
     glBindTexture(GL_TEXTURE_2D, tex);
     
     // supply flare vertices
-    glVertexPointer(3, GL_FLOAT, sizeof(GLgeoprimf), &square2[0].a.vertex);
+    glVertexPointer(3, GL_FLOAT, sizeof(GLgeoprimf), &square[0].a.vertex);
     glEnableClientState(GL_VERTEX_ARRAY);
     
     // supply flare normal coordinates
-    glNormalPointer(GL_FLOAT, sizeof(GLgeoprimf), &square2[0].a.normal);
+    glNormalPointer(GL_FLOAT, sizeof(GLgeoprimf), &square[0].a.normal);
     glEnableClientState(GL_NORMAL_ARRAY);
     
     // supply square texture coordinates
-    glTexCoordPointer(2, GL_FLOAT, sizeof(GLgeoprimf), &square2[0].a.texcoord);
+    glTexCoordPointer(2, GL_FLOAT, sizeof(GLgeoprimf), &square[0].a.texcoord);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     
     // supply square color values
-    glColorPointer(4, GL_FLOAT, sizeof(GLgeoprimf), &square2[0].a.color);
+    glColorPointer(4, GL_FLOAT, sizeof(GLgeoprimf), &square[0].a.color);
     glEnableClientState(GL_COLOR_ARRAY);
     
     // with additive blending, drawing twice makes a nice over-exposed effect
@@ -183,7 +179,7 @@ void Flare::render()
 
 void Flare::destroy()
 {
-//    if(tex) { glDeleteTextures(1, &tex); tex = 0; }
+    // remove from audio handler
     MMAudio::instance()->remove(fs);
     fs = NULL; // MMAudio is responsible for freeing fs's memory
 }

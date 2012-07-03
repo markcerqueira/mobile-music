@@ -35,8 +35,7 @@ protected:
     static float s_breathingRate;
     
     static GLuint tex;
-//    GLgeoprimf square[4];
-    GLtrif square2[2];
+    GLtrif square[2];
     
     GLcolor4f m_color;
     GLvertex3f loc;
