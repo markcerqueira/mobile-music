@@ -84,7 +84,7 @@
     
     time = acceleration.timestamp;
     
-    NSLog(@"[AccelerometerHelper] acceleration data received: %f, %f, %f at time %f", x, y, z, time);
+    // NSLog(@"[AccelerometerHelper] acceleration data received: %f, %f, %f at time %f", x, y, z, time);
 }
 
 @end
