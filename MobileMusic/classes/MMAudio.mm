@@ -56,6 +56,7 @@ void MMAudio::remove(FlareSound * fs)
 
 void MMAudio::audio_callback(Float32 * buffer, UInt32 numFrames)
 {
+    // handle add/remove operations from the graphics/UI thread
     FlareSound * fs = NULL;
     while(addList.get(fs))
         flareSounds.push_back(fs);
@@ -65,19 +66,23 @@ void MMAudio::audio_callback(Float32 * buffer, UInt32 numFrames)
         fs->destroy();
         delete fs;
     }
-          
+    
+    // render audio samples
     for(int i = 0; i < numFrames; i++)
     {
         // stereo interleaved operation
         float sample = 0;
         
+        // render each flare
         for(std::list<FlareSound *>::iterator i = flareSounds.begin(); i != flareSounds.end(); i++)
         {
             sample += (*i)->tick();
         }
         
+        // run mix through central reverb
         sample = reverb->tick(sample);
         
+        // copy mono sample to stereo buffer
         buffer[i*2] = sample;
         buffer[i*2+1] = sample;
     }
