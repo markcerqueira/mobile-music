@@ -30,6 +30,8 @@
 - (void)sliderValueChangedTo:(float)sliderValue;
 - (void)segmentedControlValueChangedTo:(int)segControlValue;
 
+- (void)volumeChanged:(float)volume;
+
 @end
 
 #endif

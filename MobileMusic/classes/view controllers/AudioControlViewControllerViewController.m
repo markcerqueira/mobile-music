@@ -16,8 +16,12 @@
 
 @synthesize slider;
 
+@synthesize volumeSlider;
+
+
 - (void)viewDidUnload
-{
+{    
+    [self setVolumeSlider:nil];
     [super viewDidUnload];
 
     self.slider = nil;
@@ -37,6 +41,21 @@
     NSLog(@"[AudioControlViewController] slider value changed to %f", theSlider.value);
     
     [[MobileMusicCoreBridge sharedInstance] sliderValueChangedTo:theSlider.value];
+}
+
+- (IBAction)volumeSliderTouchDown:(id)sender
+{
+    NSLog(@"I am about to change stuff!");
+}
+
+- (IBAction)volumeSliderChanged:(id)sender
+{
+    float f = volumeSlider.value;
+    
+    UISlider *myVolumeSlider = (UISlider *)sender;
+    float myValueFromSender = myVolumeSlider.value;
+    
+    NSLog(@"LOL: %f, %f", f, myValueFromSender);
 }
 
 @end

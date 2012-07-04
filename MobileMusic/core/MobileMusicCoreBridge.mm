@@ -58,6 +58,11 @@
     Flare::setBreathingRate(1.0/(0.5+(1-sliderValue)*3.5));
 }
 
+- (void)volumeChanged:(float)volume
+{
+    // go Spencer!
+}
+
 - (void)segmentedControlValueChangedTo:(int)segControlValue
 {
     FlareSound::SoundMode mode;
