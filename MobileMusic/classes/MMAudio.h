@@ -28,6 +28,8 @@ public:
     void add(FlareSound *f);
     void remove(FlareSound *f);
     
+    float m_masterGain;
+    
 private:
     
     CircularBuffer<FlareSound *> addList;

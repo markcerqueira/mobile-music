@@ -36,6 +36,8 @@ removeList(CircularBuffer<FlareSound *>(20))
     reverb = new stk::NRev;
     reverb->setT60(3);
     reverb->setEffectMix(0.1);
+    
+    m_masterGain = 1;
 }
 
 void MMAudio::start()
@@ -76,11 +78,15 @@ void MMAudio::audio_callback(Float32 * buffer, UInt32 numFrames)
         // render each flare
         for(std::list<FlareSound *>::iterator i = flareSounds.begin(); i != flareSounds.end(); i++)
         {
-            sample += (*i)->tick();
+            FlareSound * fs = *i;
+            sample += fs->tick();
         }
         
         // run mix through central reverb
         sample = reverb->tick(sample);
+        
+        // apply master gain
+        sample = m_masterGain * sample;
         
         // copy mono sample to stereo buffer
         buffer[i*2] = sample;

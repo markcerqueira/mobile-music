@@ -61,6 +61,7 @@
 - (void)volumeChanged:(float)volume
 {
     // go Spencer!
+    MMAudio::instance()->m_masterGain = volume;
 }
 
 - (void)segmentedControlValueChangedTo:(int)segControlValue

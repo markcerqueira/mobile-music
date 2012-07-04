@@ -56,6 +56,8 @@
     float myValueFromSender = myVolumeSlider.value;
     
     NSLog(@"LOL: %f, %f", f, myValueFromSender);
+    
+    [[MobileMusicCoreBridge sharedInstance] volumeChanged:myValueFromSender];
 }
 
 @end
