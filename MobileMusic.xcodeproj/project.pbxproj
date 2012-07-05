@@ -33,9 +33,9 @@
 		4DCB849F15A27E91008B1BE8 /* GLViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB849C15A27E91008B1BE8 /* GLViewController.mm */; };
 		4DCB84A015A27E91008B1BE8 /* GLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCB849D15A27E91008B1BE8 /* GLViewController.xib */; };
 		4DCB84A115A27E91008B1BE8 /* GLViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCB849E15A27E91008B1BE8 /* GLViewController~iphone.xib */; };
-		4DCB84A515A27EE7008B1BE8 /* AudioControlViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB84A315A27EE7008B1BE8 /* AudioControlViewControllerViewController.m */; };
-		4DCB84A615A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCB84A415A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib */; };
-		4DCB84A815A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCB84A715A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib */; };
+		4DCB84A515A27EE7008B1BE8 /* AudioControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB84A315A27EE7008B1BE8 /* AudioControlViewController.m */; };
+		4DCB84A615A27EE7008B1BE8 /* AudioControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCB84A415A27EE7008B1BE8 /* AudioControlViewController.xib */; };
+		4DCB84A815A27F03008B1BE8 /* AudioControlViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCB84A715A27F03008B1BE8 /* AudioControlViewController~iphone.xib */; };
 		4DCB84AB15A28081008B1BE8 /* MobileMusicUITouchWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB84AA15A28081008B1BE8 /* MobileMusicUITouchWindow.m */; };
 		4DD914BD15A2C4B200845342 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD914B915A2C4B200845342 /* Icon-72.png */; };
 		4DD914BE15A2C4B200845342 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DD914BA15A2C4B200845342 /* Icon.png */; };
@@ -219,10 +219,10 @@
 		4DCB849C15A27E91008B1BE8 /* GLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLViewController.mm; sourceTree = "<group>"; };
 		4DCB849D15A27E91008B1BE8 /* GLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLViewController.xib; sourceTree = "<group>"; };
 		4DCB849E15A27E91008B1BE8 /* GLViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GLViewController~iphone.xib"; sourceTree = "<group>"; };
-		4DCB84A215A27EE7008B1BE8 /* AudioControlViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioControlViewControllerViewController.h; sourceTree = "<group>"; };
-		4DCB84A315A27EE7008B1BE8 /* AudioControlViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioControlViewControllerViewController.m; sourceTree = "<group>"; };
-		4DCB84A415A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioControlViewControllerViewController.xib; sourceTree = "<group>"; };
-		4DCB84A715A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AudioControlViewControllerViewController~iphone.xib"; sourceTree = "<group>"; };
+		4DCB84A215A27EE7008B1BE8 /* AudioControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AudioControlViewController.h; sourceTree = "<group>"; };
+		4DCB84A315A27EE7008B1BE8 /* AudioControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioControlViewController.m; sourceTree = "<group>"; };
+		4DCB84A415A27EE7008B1BE8 /* AudioControlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioControlViewController.xib; sourceTree = "<group>"; };
+		4DCB84A715A27F03008B1BE8 /* AudioControlViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AudioControlViewController~iphone.xib"; sourceTree = "<group>"; };
 		4DCB84A915A28081008B1BE8 /* MobileMusicUITouchWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileMusicUITouchWindow.h; sourceTree = "<group>"; };
 		4DCB84AA15A28081008B1BE8 /* MobileMusicUITouchWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileMusicUITouchWindow.m; sourceTree = "<group>"; };
 		4DD914B915A2C4B200845342 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
@@ -647,10 +647,10 @@
 				4DCB849C15A27E91008B1BE8 /* GLViewController.mm */,
 				4DCB849D15A27E91008B1BE8 /* GLViewController.xib */,
 				4DCB849E15A27E91008B1BE8 /* GLViewController~iphone.xib */,
-				4DCB84A215A27EE7008B1BE8 /* AudioControlViewControllerViewController.h */,
-				4DCB84A315A27EE7008B1BE8 /* AudioControlViewControllerViewController.m */,
-				4DCB84A415A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib */,
-				4DCB84A715A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib */,
+				4DCB84A215A27EE7008B1BE8 /* AudioControlViewController.h */,
+				4DCB84A315A27EE7008B1BE8 /* AudioControlViewController.m */,
+				4DCB84A415A27EE7008B1BE8 /* AudioControlViewController.xib */,
+				4DCB84A715A27F03008B1BE8 /* AudioControlViewController~iphone.xib */,
 				4DEA9B7E15A2B64B0099E648 /* TabBarNubViewController.h */,
 				4DEA9B7F15A2B64B0099E648 /* TabBarNubViewController.m */,
 				4DEA9B8615A2C1890099E648 /* TabBarNubViewController.xib */,
@@ -929,8 +929,8 @@
 				4DF315D415A12C5300A1C304 /* flare.png in Resources */,
 				4DCB84A015A27E91008B1BE8 /* GLViewController.xib in Resources */,
 				4DCB84A115A27E91008B1BE8 /* GLViewController~iphone.xib in Resources */,
-				4DCB84A615A27EE7008B1BE8 /* AudioControlViewControllerViewController.xib in Resources */,
-				4DCB84A815A27F03008B1BE8 /* AudioControlViewControllerViewController~iphone.xib in Resources */,
+				4DCB84A615A27EE7008B1BE8 /* AudioControlViewController.xib in Resources */,
+				4DCB84A815A27F03008B1BE8 /* AudioControlViewController~iphone.xib in Resources */,
 				092EBC5715A2C5210006391D /* spencer-ahh.wav in Resources */,
 				4DEA9B8215A2B64B0099E648 /* TabBarNubViewController~iphone.xib in Resources */,
 				4DEA9B8515A2BD4A0099E648 /* gafta.png in Resources */,
@@ -979,7 +979,7 @@
 				4DCA0F7B15A26901002E9618 /* NetworkingExample.m in Sources */,
 				4DCA0F7E15A26A2E002E9618 /* MBXMLRequest.m in Sources */,
 				4DCB849F15A27E91008B1BE8 /* GLViewController.mm in Sources */,
-				4DCB84A515A27EE7008B1BE8 /* AudioControlViewControllerViewController.m in Sources */,
+				4DCB84A515A27EE7008B1BE8 /* AudioControlViewController.m in Sources */,
 				4DCB84AB15A28081008B1BE8 /* MobileMusicUITouchWindow.m in Sources */,
 				4DEA9B8115A2B64B0099E648 /* TabBarNubViewController.m in Sources */,
 			);

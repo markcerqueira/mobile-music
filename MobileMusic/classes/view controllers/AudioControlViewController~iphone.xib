@@ -52,9 +52,10 @@
 					<object class="IBUISlider" id="919244920">
 						<reference key="NSNextResponder" ref="430538599"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{74, 96}, {172, 23}}</string>
+						<string key="NSFrame">{{15, 51}, {291, 23}}</string>
 						<reference key="NSSuperview" ref="430538599"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -175,7 +176,7 @@
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
-				<string key="-1.CustomClassName">AudioControlViewControllerViewController</string>
+				<string key="-1.CustomClassName">AudioControlViewController</string>
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -192,7 +193,7 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
-					<string key="className">AudioControlViewControllerViewController</string>
+					<string key="className">AudioControlViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="slider">UISlider</string>
@@ -210,7 +211,7 @@
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/AudioControlViewControllerViewController.h</string>
+						<string key="minorKey">./Classes/AudioControlViewController.h</string>
 					</object>
 				</object>
 			</array>

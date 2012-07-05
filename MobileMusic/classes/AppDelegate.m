@@ -10,7 +10,7 @@
 
 #import "MobileMusicUITouchWindow.h"
 #import "GLViewController.h"
-#import "AudioControlViewControllerViewController.h"
+#import "AudioControlViewController.h"
 #import "MobileMusicCoreBridge.h"
 #import "AccelerometerHelper.h"
 #import "LocationHelper.h"
@@ -32,42 +32,54 @@
 @synthesize navigationController;
 @synthesize GLviewController;
 
-// override point for customization after application launch
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (void)setUpNavigationStack
 {
-    // create our custom window that will pass touches nicely between UIKit and GL
+    // create our custom window that will pass touches nicely between UIKit and GL (MobileMusicUITouchWindow)
     self.touchWindow = [[MobileMusicUITouchWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        
+    
     // allocate our GL view controller
     self.GLviewController = [[GLViewController alloc] init];
     
     // allocate our UIKit-based audio control dashboard
-    AudioControlViewControllerViewController *audioControlVC = [[AudioControlViewControllerViewController alloc] init];
+    AudioControlViewController *audioControlVC = [[AudioControlViewController alloc] init];
     
     // setup navigation view controller with audio control view controller at the root
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:audioControlVC];
     
+    // add the tab-bar control to the navigation controllers view
     [self.navigationController.view addSubview:[TabBarNubViewController sharedInstance].view];
     
+    // setting the frame of a view repositions it in the window
+    // in this case, we are moving the tab bar to the bottom of the screen
     [TabBarNubViewController sharedInstance].view.frame = CGRectMake( 0, 
-                                                                      self.touchWindow.frame.size.height, 
-                                                                      self.touchWindow.frame.size.width,
-                                                                      self.touchWindow.frame.size.height );
+                                                                     self.touchWindow.frame.size.height, 
+                                                                     self.touchWindow.frame.size.width,
+                                                                     self.touchWindow.frame.size.height );
     
     // hide navigation bar
     [self.navigationController setNavigationBarHidden:YES];
     
-    // the navigation controller will be the root view of the whole app
+    // the navigation controller will be the root view of the whole app (Window is the top-most UI property)
     self.touchWindow.rootViewController = self.navigationController;
     
-    // add the GL view controller then push it to the back
+    // add the GL view controller then push it to the back (this means the GL view will be below everything else)
+    // to see the GL layer, views above it need to be clear/transparent!
     [self.touchWindow addSubview:[self.GLviewController view]];
     [self.touchWindow sendSubviewToBack:[self.GLviewController view]];
-
+    
+    // show the window - if you do not call this you may not see anything!
     [self.touchWindow makeKeyAndVisible];
     
     // route touches to the GL view controller
     [self.touchWindow setTouchDelegate:self.GLviewController];
+    
+}
+
+// override point for customization after application launch
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // this will set up all our initial view controllers
+    [self setUpNavigationStack];
     
     // initialize helpers
     [AccelerometerHelper sharedInstance];
@@ -76,6 +88,7 @@
     // initialize audio!
     [[MobileMusicCoreBridge sharedInstance] initializeAudio];
     
+    // example network call that fetches 2 tweets
     [NetworkingExample returnLatestTopTweets:2];
     
     return YES;
