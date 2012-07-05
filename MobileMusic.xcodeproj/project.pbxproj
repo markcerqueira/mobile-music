@@ -10,6 +10,8 @@
 		092EBC5715A2C5210006391D /* spencer-ahh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 092EBC5615A2C5210006391D /* spencer-ahh.wav */; };
 		09C89BF0159BFFF600C9EFB2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89BED159BFFF500C9EFB2 /* AudioToolbox.framework */; };
 		09C89BF2159BFFF600C9EFB2 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89BEF159BFFF500C9EFB2 /* CoreAudio.framework */; };
+		4D2F266415A6509600EE3DC0 /* MotionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F266315A6509600EE3DC0 /* MotionHelper.m */; };
+		4D2F266615A6518300EE3DC0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2F266515A6518300EE3DC0 /* CoreMotion.framework */; };
 		4D8DAE3F1592D1C400A6B60C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE3E1592D1C400A6B60C /* UIKit.framework */; };
 		4D8DAE411592D1C400A6B60C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE401592D1C400A6B60C /* Foundation.framework */; };
 		4D8DAE431592D1C400A6B60C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE421592D1C400A6B60C /* CoreGraphics.framework */; };
@@ -172,6 +174,9 @@
 		09C89C7C159E754500C9EFB2 /* WvOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WvOut.h; sourceTree = "<group>"; };
 		09C89C7E159E754500C9EFB2 /* libstk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libstk.a; sourceTree = "<group>"; };
 		09E6E4E415A130A1008EE730 /* HSV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSV.h; sourceTree = "<group>"; };
+		4D2F266215A6509600EE3DC0 /* MotionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionHelper.h; sourceTree = "<group>"; };
+		4D2F266315A6509600EE3DC0 /* MotionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionHelper.m; sourceTree = "<group>"; };
+		4D2F266515A6518300EE3DC0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		4D8DAE3A1592D1C400A6B60C /* MobileMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8DAE3E1592D1C400A6B60C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D8DAE401592D1C400A6B60C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -219,7 +224,7 @@
 		4DCB849C15A27E91008B1BE8 /* GLViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLViewController.mm; sourceTree = "<group>"; };
 		4DCB849D15A27E91008B1BE8 /* GLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GLViewController.xib; sourceTree = "<group>"; };
 		4DCB849E15A27E91008B1BE8 /* GLViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GLViewController~iphone.xib"; sourceTree = "<group>"; };
-		4DCB84A215A27EE7008B1BE8 /* AudioControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AudioControlViewController.h; sourceTree = "<group>"; };
+		4DCB84A215A27EE7008B1BE8 /* AudioControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioControlViewController.h; sourceTree = "<group>"; };
 		4DCB84A315A27EE7008B1BE8 /* AudioControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioControlViewController.m; sourceTree = "<group>"; };
 		4DCB84A415A27EE7008B1BE8 /* AudioControlViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioControlViewController.xib; sourceTree = "<group>"; };
 		4DCB84A715A27F03008B1BE8 /* AudioControlViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AudioControlViewController~iphone.xib"; sourceTree = "<group>"; };
@@ -375,6 +380,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2F266615A6518300EE3DC0 /* CoreMotion.framework in Frameworks */,
 				4DF315ED15A12FFD00A1C304 /* CoreLocation.framework in Frameworks */,
 				09C89BF0159BFFF600C9EFB2 /* AudioToolbox.framework in Frameworks */,
 				09C89BF2159BFFF600C9EFB2 /* CoreAudio.framework in Frameworks */,
@@ -541,6 +547,7 @@
 				09C89BEF159BFFF500C9EFB2 /* CoreAudio.framework */,
 				4D8DAE421592D1C400A6B60C /* CoreGraphics.framework */,
 				4DF315EC15A12FFD00A1C304 /* CoreLocation.framework */,
+				4D2F266515A6518300EE3DC0 /* CoreMotion.framework */,
 				4D8DAE401592D1C400A6B60C /* Foundation.framework */,
 				4D8DAE441592D1C400A6B60C /* GLKit.framework */,
 				4D8DAE461592D1C400A6B60C /* OpenGLES.framework */,
@@ -686,6 +693,8 @@
 				4DF3154C15A12C5300A1C304 /* AccelerometerHelper.m */,
 				4DF315E015A12F8600A1C304 /* LocationHelper.h */,
 				4DF315E115A12F8600A1C304 /* LocationHelper.m */,
+				4D2F266215A6509600EE3DC0 /* MotionHelper.h */,
+				4D2F266315A6509600EE3DC0 /* MotionHelper.m */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -982,6 +991,7 @@
 				4DCB84A515A27EE7008B1BE8 /* AudioControlViewController.m in Sources */,
 				4DCB84AB15A28081008B1BE8 /* MobileMusicUITouchWindow.m in Sources */,
 				4DEA9B8115A2B64B0099E648 /* TabBarNubViewController.m in Sources */,
+				4D2F266415A6509600EE3DC0 /* MotionHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

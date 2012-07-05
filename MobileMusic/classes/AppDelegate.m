@@ -16,6 +16,7 @@
 #import "LocationHelper.h"
 #import "NetworkingExample.h"
 #import "TabBarNubViewController.h"
+#import "MotionHelper.h"
 
 @interface AppDelegate ()
 
@@ -83,6 +84,12 @@
     
     // initialize helpers
     [AccelerometerHelper sharedInstance];
+
+    // start the motion helper
+    [MotionHelper sharedInstance];
+    [[MotionHelper sharedInstance] startCollectingMotionData];
+    
+    // start the location tracker
     [LocationHelper sharedInstance];
     
     // initialize audio!
