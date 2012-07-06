@@ -1,0 +1,319 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		094567BC15A67E1A0054F83F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094567BB15A67E190054F83F /* UIKit.framework */; };
+		094567BE15A67E1A0054F83F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094567BD15A67E1A0054F83F /* Foundation.framework */; };
+		094567C015A67E1A0054F83F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094567BF15A67E1A0054F83F /* CoreGraphics.framework */; };
+		094567C615A67E1A0054F83F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 094567C415A67E1A0054F83F /* InfoPlist.strings */; };
+		094567C815A67E1A0054F83F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 094567C715A67E1A0054F83F /* main.m */; };
+		094567CC15A67E1A0054F83F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 094567CB15A67E1A0054F83F /* AppDelegate.m */; };
+		094567CF15A67E1A0054F83F /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 094567CE15A67E1A0054F83F /* ViewController.mm */; };
+		094567D215A67E1A0054F83F /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094567D015A67E1A0054F83F /* ViewController_iPhone.xib */; };
+		094567D515A67E1A0054F83F /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094567D315A67E1A0054F83F /* ViewController_iPad.xib */; };
+		094567DF15A67EA30054F83F /* mo_audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 094567DC15A67E9A0054F83F /* mo_audio.mm */; };
+		094567E215A67F540054F83F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094567E015A67F540054F83F /* AudioToolbox.framework */; };
+		094567E315A67F540054F83F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094567E115A67F540054F83F /* CoreAudio.framework */; };
+		094567E615A681030054F83F /* Audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 094567E515A681030054F83F /* Audio.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		094567B715A67E190054F83F /* MinimalMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		094567BB15A67E190054F83F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		094567BD15A67E1A0054F83F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		094567BF15A67E1A0054F83F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		094567C315A67E1A0054F83F /* MinimalMusic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MinimalMusic-Info.plist"; sourceTree = "<group>"; };
+		094567C515A67E1A0054F83F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		094567C715A67E1A0054F83F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		094567C915A67E1A0054F83F /* MinimalMusic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MinimalMusic-Prefix.pch"; sourceTree = "<group>"; };
+		094567CA15A67E1A0054F83F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		094567CB15A67E1A0054F83F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		094567CD15A67E1A0054F83F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		094567CE15A67E1A0054F83F /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		094567D115A67E1A0054F83F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		094567D415A67E1A0054F83F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		094567DB15A67E9A0054F83F /* mo_audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mo_audio.h; sourceTree = "<group>"; };
+		094567DC15A67E9A0054F83F /* mo_audio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mo_audio.mm; sourceTree = "<group>"; };
+		094567DD15A67E9A0054F83F /* mo_def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mo_def.h; sourceTree = "<group>"; };
+		094567E015A67F540054F83F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		094567E115A67F540054F83F /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		094567E415A67FF40054F83F /* Audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
+		094567E515A681030054F83F /* Audio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Audio.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		094567B415A67E190054F83F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				094567E215A67F540054F83F /* AudioToolbox.framework in Frameworks */,
+				094567E315A67F540054F83F /* CoreAudio.framework in Frameworks */,
+				094567BC15A67E1A0054F83F /* UIKit.framework in Frameworks */,
+				094567BE15A67E1A0054F83F /* Foundation.framework in Frameworks */,
+				094567C015A67E1A0054F83F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		094567AC15A67E190054F83F = {
+			isa = PBXGroup;
+			children = (
+				094567E015A67F540054F83F /* AudioToolbox.framework */,
+				094567E115A67F540054F83F /* CoreAudio.framework */,
+				094567C115A67E1A0054F83F /* MinimalMusic */,
+				094567BA15A67E190054F83F /* Frameworks */,
+				094567B815A67E190054F83F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		094567B815A67E190054F83F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				094567B715A67E190054F83F /* MinimalMusic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		094567BA15A67E190054F83F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				094567BB15A67E190054F83F /* UIKit.framework */,
+				094567BD15A67E1A0054F83F /* Foundation.framework */,
+				094567BF15A67E1A0054F83F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		094567C115A67E1A0054F83F /* MinimalMusic */ = {
+			isa = PBXGroup;
+			children = (
+				094567DB15A67E9A0054F83F /* mo_audio.h */,
+				094567DC15A67E9A0054F83F /* mo_audio.mm */,
+				094567DD15A67E9A0054F83F /* mo_def.h */,
+				094567CA15A67E1A0054F83F /* AppDelegate.h */,
+				094567CB15A67E1A0054F83F /* AppDelegate.m */,
+				094567CD15A67E1A0054F83F /* ViewController.h */,
+				094567CE15A67E1A0054F83F /* ViewController.mm */,
+				094567D015A67E1A0054F83F /* ViewController_iPhone.xib */,
+				094567D315A67E1A0054F83F /* ViewController_iPad.xib */,
+				094567C215A67E1A0054F83F /* Supporting Files */,
+				094567E415A67FF40054F83F /* Audio.h */,
+				094567E515A681030054F83F /* Audio.mm */,
+			);
+			path = MinimalMusic;
+			sourceTree = "<group>";
+		};
+		094567C215A67E1A0054F83F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				094567C315A67E1A0054F83F /* MinimalMusic-Info.plist */,
+				094567C415A67E1A0054F83F /* InfoPlist.strings */,
+				094567C715A67E1A0054F83F /* main.m */,
+				094567C915A67E1A0054F83F /* MinimalMusic-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		094567B615A67E190054F83F /* MinimalMusic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 094567D815A67E1A0054F83F /* Build configuration list for PBXNativeTarget "MinimalMusic" */;
+			buildPhases = (
+				094567B315A67E190054F83F /* Sources */,
+				094567B415A67E190054F83F /* Frameworks */,
+				094567B515A67E190054F83F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MinimalMusic;
+			productName = MobileMusic2;
+			productReference = 094567B715A67E190054F83F /* MinimalMusic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		094567AE15A67E190054F83F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Stanford University";
+			};
+			buildConfigurationList = 094567B115A67E190054F83F /* Build configuration list for PBXProject "MinimalMusic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 094567AC15A67E190054F83F;
+			productRefGroup = 094567B815A67E190054F83F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				094567B615A67E190054F83F /* MinimalMusic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		094567B515A67E190054F83F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				094567C615A67E1A0054F83F /* InfoPlist.strings in Resources */,
+				094567D215A67E1A0054F83F /* ViewController_iPhone.xib in Resources */,
+				094567D515A67E1A0054F83F /* ViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		094567B315A67E190054F83F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				094567C815A67E1A0054F83F /* main.m in Sources */,
+				094567CC15A67E1A0054F83F /* AppDelegate.m in Sources */,
+				094567CF15A67E1A0054F83F /* ViewController.mm in Sources */,
+				094567DF15A67EA30054F83F /* mo_audio.mm in Sources */,
+				094567E615A681030054F83F /* Audio.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		094567C415A67E1A0054F83F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				094567C515A67E1A0054F83F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		094567D015A67E1A0054F83F /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				094567D115A67E1A0054F83F /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		094567D315A67E1A0054F83F /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				094567D415A67E1A0054F83F /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		094567D615A67E1A0054F83F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		094567D715A67E1A0054F83F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		094567D915A67E1A0054F83F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MinimalMusic/MinimalMusic-Prefix.pch";
+				INFOPLIST_FILE = "MinimalMusic/MinimalMusic-Info.plist";
+				PRODUCT_NAME = MinimalMusic;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		094567DA15A67E1A0054F83F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MinimalMusic/MinimalMusic-Prefix.pch";
+				INFOPLIST_FILE = "MinimalMusic/MinimalMusic-Info.plist";
+				PRODUCT_NAME = MinimalMusic;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		094567B115A67E190054F83F /* Build configuration list for PBXProject "MinimalMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				094567D615A67E1A0054F83F /* Debug */,
+				094567D715A67E1A0054F83F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		094567D815A67E1A0054F83F /* Build configuration list for PBXNativeTarget "MinimalMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				094567D915A67E1A0054F83F /* Debug */,
+				094567DA15A67E1A0054F83F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 094567AE15A67E190054F83F /* Project object */;
+}
