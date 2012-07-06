@@ -17,6 +17,7 @@
 #import "NetworkingExample.h"
 #import "TabBarNubViewController.h"
 #import "MotionHelper.h"
+#import "ProgrammaticViewController.h"
 
 @interface AppDelegate ()
 
@@ -41,11 +42,26 @@
     // allocate our GL view controller
     self.GLviewController = [[GLViewController alloc] init];
     
-    // allocate our UIKit-based audio control dashboard
-    AudioControlViewController *audioControlVC = [[AudioControlViewController alloc] init];
+    // set this to YES to use the programatically constructed view controller (ProgrammaticViewController)
+    // set to NO to use the AudioControlViewController view controller (uses xibs)
+    BOOL useProgrammaticViewController = YES;
     
-    // setup navigation view controller with audio control view controller at the root
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:audioControlVC];
+    if ( useProgrammaticViewController )
+    {
+        // initialize our programatically constructed view controller
+        ProgrammaticViewController *programmaticVC = [[ProgrammaticViewController alloc] init];
+        
+        // set it as the root of the view controller
+        self.navigationController = [[UINavigationController alloc] initWithRootViewController:programmaticVC];
+    }
+    else
+    {
+        // allocate our UIKit-based audio control dashboard
+        AudioControlViewController *audioControlVC = [[AudioControlViewController alloc] init];
+        
+        // setup navigation view controller with audio control view controller at the root
+        self.navigationController = [[UINavigationController alloc] initWithRootViewController:audioControlVC];
+    }
     
     // add the tab-bar control to the navigation controllers view
     [self.navigationController.view addSubview:[TabBarNubViewController sharedInstance].view];
