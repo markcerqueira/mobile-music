@@ -7,6 +7,17 @@
 
 #import "ObjectiveCBasics.h"
 
+// if you want to define more methods that are private to a class, you can have an interface that lives
+// in your .m file
+//
+// only methods inside this file will be able to see this content
+@interface ObjectiveCBasics ()
+
+- (void)privateMethod;
+
+@end
+
+
 // everything between @implementation and @end should implement the methods in the @interface
 @implementation ObjectiveCBasics
 
