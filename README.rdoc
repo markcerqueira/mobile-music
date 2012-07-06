@@ -1,9 +1,14 @@
 = mobile-music
-<em>A starter Xcode project for mobile music development on iOS devices</em>
+<em>A primer on mobile music development for iOS devices</em>
 
 == MAIN FEATURES
+This repository contains two Xcode projects.
+1. MinimalMusic - this contains only material covered in the course; if you missed something from class, it should be in here
+2. MobileMusic - this has additional content that may be useful for those who want to explore a little more
 
 == GETTING STARTED
+1. Clone (or fork and clone) this repository and open up the project in Xcode.
+2. Compile and run on the iOS simulator or you iOS device.
 
 == MORE INFO
 
