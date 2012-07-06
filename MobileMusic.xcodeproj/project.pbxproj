@@ -12,6 +12,7 @@
 		09C89BF2159BFFF600C9EFB2 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C89BEF159BFFF500C9EFB2 /* CoreAudio.framework */; };
 		4D2F266415A6509600EE3DC0 /* MotionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F266315A6509600EE3DC0 /* MotionHelper.m */; };
 		4D2F266615A6518300EE3DC0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2F266515A6518300EE3DC0 /* CoreMotion.framework */; };
+		4D2F267215A65A1200EE3DC0 /* ObjectiveCBasics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F267115A65A1200EE3DC0 /* ObjectiveCBasics.m */; };
 		4D8DAE3F1592D1C400A6B60C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE3E1592D1C400A6B60C /* UIKit.framework */; };
 		4D8DAE411592D1C400A6B60C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE401592D1C400A6B60C /* Foundation.framework */; };
 		4D8DAE431592D1C400A6B60C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8DAE421592D1C400A6B60C /* CoreGraphics.framework */; };
@@ -177,6 +178,8 @@
 		4D2F266215A6509600EE3DC0 /* MotionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionHelper.h; sourceTree = "<group>"; };
 		4D2F266315A6509600EE3DC0 /* MotionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionHelper.m; sourceTree = "<group>"; };
 		4D2F266515A6518300EE3DC0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		4D2F267015A65A1200EE3DC0 /* ObjectiveCBasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveCBasics.h; sourceTree = "<group>"; };
+		4D2F267115A65A1200EE3DC0 /* ObjectiveCBasics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveCBasics.m; sourceTree = "<group>"; };
 		4D8DAE3A1592D1C400A6B60C /* MobileMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8DAE3E1592D1C400A6B60C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D8DAE401592D1C400A6B60C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -643,6 +646,8 @@
 			children = (
 				4DCA0F7915A26901002E9618 /* NetworkingExample.h */,
 				4DCA0F7A15A26901002E9618 /* NetworkingExample.m */,
+				4D2F267015A65A1200EE3DC0 /* ObjectiveCBasics.h */,
+				4D2F267115A65A1200EE3DC0 /* ObjectiveCBasics.m */,
 			);
 			path = examples;
 			sourceTree = "<group>";
@@ -992,6 +997,7 @@
 				4DCB84AB15A28081008B1BE8 /* MobileMusicUITouchWindow.m in Sources */,
 				4DEA9B8115A2B64B0099E648 /* TabBarNubViewController.m in Sources */,
 				4D2F266415A6509600EE3DC0 /* MotionHelper.m in Sources */,
+				4D2F267215A65A1200EE3DC0 /* ObjectiveCBasics.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
