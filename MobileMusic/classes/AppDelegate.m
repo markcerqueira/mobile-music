@@ -78,6 +78,8 @@
     
     [NetworkingExample returnLatestTopTweets:2];
     
+    NSLog(@"HEY MARK, I MADE A CHANGE");
+    
     return YES;
 }
 
