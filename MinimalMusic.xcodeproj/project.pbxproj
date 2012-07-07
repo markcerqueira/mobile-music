@@ -14,8 +14,8 @@
 		094567C815A67E1A0054F83F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 094567C715A67E1A0054F83F /* main.m */; };
 		094567CC15A67E1A0054F83F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 094567CB15A67E1A0054F83F /* AppDelegate.m */; };
 		094567CF15A67E1A0054F83F /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 094567CE15A67E1A0054F83F /* ViewController.mm */; };
-		094567D215A67E1A0054F83F /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094567D015A67E1A0054F83F /* ViewController_iPhone.xib */; };
-		094567D515A67E1A0054F83F /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094567D315A67E1A0054F83F /* ViewController_iPad.xib */; };
+		094567D215A67E1A0054F83F /* ViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094567D015A67E1A0054F83F /* ViewController~iphone.xib */; };
+		094567D515A67E1A0054F83F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094567D315A67E1A0054F83F /* ViewController.xib */; };
 		094567DF15A67EA30054F83F /* mo_audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 094567DC15A67E9A0054F83F /* mo_audio.mm */; };
 		094567E215A67F540054F83F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094567E015A67F540054F83F /* AudioToolbox.framework */; };
 		094567E315A67F540054F83F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094567E115A67F540054F83F /* CoreAudio.framework */; };
@@ -36,8 +36,8 @@
 		094567CB15A67E1A0054F83F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		094567CD15A67E1A0054F83F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		094567CE15A67E1A0054F83F /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
-		094567D115A67E1A0054F83F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		094567D415A67E1A0054F83F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		094567D115A67E1A0054F83F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/ViewController~iphone.xib"; sourceTree = "<group>"; };
+		094567D415A67E1A0054F83F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		094567DB15A67E9A0054F83F /* mo_audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mo_audio.h; sourceTree = "<group>"; };
 		094567DC15A67E9A0054F83F /* mo_audio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mo_audio.mm; sourceTree = "<group>"; };
 		094567DD15A67E9A0054F83F /* mo_def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mo_def.h; sourceTree = "<group>"; };
@@ -108,8 +108,8 @@
 				094567DD15A67E9A0054F83F /* mo_def.h */,
 				094567CD15A67E1A0054F83F /* ViewController.h */,
 				094567CE15A67E1A0054F83F /* ViewController.mm */,
-				094567D315A67E1A0054F83F /* ViewController_iPad.xib */,
-				094567D015A67E1A0054F83F /* ViewController_iPhone.xib */,
+				094567D315A67E1A0054F83F /* ViewController.xib */,
+				094567D015A67E1A0054F83F /* ViewController~iphone.xib */,
 			);
 			path = MinimalMusic;
 			sourceTree = "<group>";
@@ -177,8 +177,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				094567C615A67E1A0054F83F /* InfoPlist.strings in Resources */,
-				094567D215A67E1A0054F83F /* ViewController_iPhone.xib in Resources */,
-				094567D515A67E1A0054F83F /* ViewController_iPad.xib in Resources */,
+				094567D215A67E1A0054F83F /* ViewController~iphone.xib in Resources */,
+				094567D515A67E1A0054F83F /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,20 +208,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		094567D015A67E1A0054F83F /* ViewController_iPhone.xib */ = {
+		094567D015A67E1A0054F83F /* ViewController~iphone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				094567D115A67E1A0054F83F /* en */,
 			);
-			name = ViewController_iPhone.xib;
+			name = "ViewController~iphone.xib";
 			sourceTree = "<group>";
 		};
-		094567D315A67E1A0054F83F /* ViewController_iPad.xib */ = {
+		094567D315A67E1A0054F83F /* ViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				094567D415A67E1A0054F83F /* en */,
 			);
-			name = ViewController_iPad.xib;
+			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

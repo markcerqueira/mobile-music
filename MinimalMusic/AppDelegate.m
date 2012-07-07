@@ -18,14 +18,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
-    } else {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
-    }
+    
+    // allocate an instance of ViewController that we will show to the user
+    // change the class of ViewController HERE if you'd like to use a different view controller
+    self.viewController = [[ViewController alloc] init];
+    
+    // set our view controller as the root view controller
     self.window.rootViewController = self.viewController;
+    
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
