@@ -8,7 +8,9 @@ build/*
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-*.xcworkspace
+MobileMusic.xcodeproj/project.xcworkspace
+MinimalMusic.xcodeproj/project.xcworkspace
+!default.xcworkspace
 !default.xcworkspace
 xcuserdata
 profile
