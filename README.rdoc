@@ -6,8 +6,10 @@ This repository contains two Xcode projects.
 1. MinimalMusic - this contains only material covered in the course; if you missed something from class, it should be in here
 2. MobileMusic - this has additional content that may be useful for those who want to explore a little more
 
+Also included is a workspace, MusicWorkspace.xcworkspace, that includes references to both projects allowing easy access to both projects. Working in this workspace allows files to be copied ove'r from one project to another easily.
+
 == GETTING STARTED
-1. Clone (or fork and clone) this repository and open up the project in Xcode.
+1. Clone (or fork and clone) this repository and open up the desired project/workspace in Xcode.
 2. Compile and run on the iOS simulator or you iOS device.
 
 == MORE INFO
