@@ -21,6 +21,7 @@
 		094567E315A67F540054F83F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094567E115A67F540054F83F /* CoreAudio.framework */; };
 		094567E615A681030054F83F /* Audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 094567E515A681030054F83F /* Audio.mm */; };
 		4D080A5115A8B71E0064A398 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D080A5015A8B71E0064A398 /* CoreMotion.framework */; };
+		4D38209715A93E9D0055B5B4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D38209615A93E9D0055B5B4 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		094567E415A67FF40054F83F /* Audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
 		094567E515A681030054F83F /* Audio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Audio.mm; sourceTree = "<group>"; };
 		4D080A5015A8B71E0064A398 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		4D38209615A93E9D0055B5B4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D38209715A93E9D0055B5B4 /* CoreLocation.framework in Frameworks */,
 				4D080A5115A8B71E0064A398 /* CoreMotion.framework in Frameworks */,
 				094567E215A67F540054F83F /* AudioToolbox.framework in Frameworks */,
 				094567E315A67F540054F83F /* CoreAudio.framework in Frameworks */,
@@ -88,6 +91,7 @@
 				094567E015A67F540054F83F /* AudioToolbox.framework */,
 				094567E115A67F540054F83F /* CoreAudio.framework */,
 				094567BF15A67E1A0054F83F /* CoreGraphics.framework */,
+				4D38209615A93E9D0055B5B4 /* CoreLocation.framework */,
 				4D080A5015A8B71E0064A398 /* CoreMotion.framework */,
 				094567BD15A67E1A0054F83F /* Foundation.framework */,
 				094567BB15A67E190054F83F /* UIKit.framework */,
@@ -279,6 +283,11 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MinimalMusic/MinimalMusic-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"MINIMAL_MUSIC=1",
+				);
 				INFOPLIST_FILE = "MinimalMusic/MinimalMusic-Info.plist";
 				PRODUCT_NAME = MinimalMusic;
 				WRAPPER_EXTENSION = app;
@@ -290,6 +299,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MinimalMusic/MinimalMusic-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "MINIMAL_MUSIC=1";
 				INFOPLIST_FILE = "MinimalMusic/MinimalMusic-Info.plist";
 				PRODUCT_NAME = MinimalMusic;
 				WRAPPER_EXTENSION = app;

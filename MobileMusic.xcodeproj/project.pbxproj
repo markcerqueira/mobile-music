@@ -1064,6 +1064,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileMusic/supporting files/MobileMusic-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"MOBILE_MUSIC=1",
+				);
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "MobileMusic/supporting files/MobileMusic-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1084,6 +1089,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileMusic/supporting files/MobileMusic-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "MOBILE_MUSIC=1";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "MobileMusic/supporting files/MobileMusic-Info.plist";
 				LIBRARY_SEARCH_PATHS = (

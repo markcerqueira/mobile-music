@@ -6,7 +6,11 @@
 //
 
 #import "AudioControlViewController.h"
+
+// only the Mobile Music project uses the CoreBridge
+#ifdef MOBILE_MUSIC
 #import "MobileMusicCoreBridge.h"
+#endif
 
 @implementation AudioControlViewController
 
@@ -35,7 +39,9 @@
     
     NSLog(@"[AudioControlViewController] slider value changed to %f", theSlider.value);
     
+#ifdef MOBILE_MUSIC
     [[MobileMusicCoreBridge sharedInstance] sliderValueChangedTo:theSlider.value];
+#endif
 }
 
 - (IBAction)volumeSliderTouchDown:(id)sender
@@ -55,9 +61,11 @@
     // valueFromOutlet and valueFromSender will be the same because sender == volumeSlider!
     
     NSLog(@"[AudioControlViewController] from outlet: %f, from sender: %f", valueFromOutlet, valueFromSender);
-    
+  
+#ifdef MOBILE_MUSIC
     // send our volume value to the bridge
     [[MobileMusicCoreBridge sharedInstance] volumeChanged:valueFromOutlet];
+#endif
 }
 
 @end

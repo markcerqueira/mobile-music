@@ -6,7 +6,10 @@
 //
 
 #import "ProgrammaticViewController.h"
+
+#ifdef MOBILE_MUSIC
 #import "MobileMusicCoreBridge.h"
+#endif
 
 // nothing private to declare in this interface here
 @interface ProgrammaticViewController ()
@@ -126,8 +129,10 @@
     // to print the value we can use our reference to it (self.mySlider) or the sender we just casted!
     self.myLabel.text = [NSString stringWithFormat:@"The value of the slider is: %f", theSenderSlider.value];
     
+#ifdef MOBILE_MUSIC
     // send our volume value to the bridge
     [[MobileMusicCoreBridge sharedInstance] volumeChanged:self.mySlider.value];
+#endif
 }
 
 - (void)viewDidUnload
