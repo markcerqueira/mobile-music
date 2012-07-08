@@ -8,6 +8,9 @@
 #import <UIKit/UIKit.h>
 
 @interface OutletsViewController : UIViewController
+{
+    NSTimer *repeatTimer;
+}
 
 @property (nonatomic, strong) IBOutlet UISlider *slider;
 @property (nonatomic, strong) IBOutlet UISegmentedControl *segmentedControl;

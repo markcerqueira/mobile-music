@@ -100,7 +100,7 @@
     [self startGyroscope];
     [self startMagnetometer];
     
-    dataCollectionTimer =  [NSTimer timerWithTimeInterval:0.1 // 10 times per second
+    dataCollectionTimer =  [NSTimer timerWithTimeInterval:0.01 // 100 times per second
                                                    target:self 
                                                  selector:@selector(updateMotionData) 
                                                  userInfo:nil 
