@@ -52,12 +52,22 @@ void Audio::start()
     
     m_freq = 220;
     m_phase = 0;
-    m_gain = 0;
+    m_gain = 1;
     
     m_modFreq = m_freq*2;
     m_modPhase = 0;
     // try different values for modGain!
     m_modGain = 1000;
+    
+    m_lfoFreq = 0.125;
+    m_lfoPhase = 0;
+    m_lfoGain = 1;
+    
+    // 
+    m_adsr.setAllTimes(0.02, 0.01, 0.5, 0.2);
+    
+    m_filter.set_sample_rate(SAMPLERATE);
+    m_filter.set_rlpf(m_freq, 10);
 }
 
 void Audio::stop()
@@ -68,16 +78,21 @@ void Audio::stop()
 
 void Audio::keyDown()
 {
-    m_gain = 1;
+    m_adsr.keyOn();
 }
 
 void Audio::keyUp()
 {
-    m_gain = 0;
+    m_adsr.keyOff();
 }
 
 void Audio::audio_callback(float * buffer, int frames)
 {
+    float lfo = sineWave(m_lfoPhase) * m_lfoGain;
+    m_filter.set_rlpf(m_freq+100*lfo, 4);
+    
+    m_lfoPhase += m_lfoFreq*frames/SAMPLERATE;
+    
     for(int i = 0; i < frames; i++)
     {
         float mod = triangleWave(m_modPhase);
@@ -93,7 +108,9 @@ void Audio::audio_callback(float * buffer, int frames)
         m_phase += (m_freq+mod)/SAMPLERATE;
         if(m_phase > 1) m_phase -= 1;
         
-        sample = sample * m_gain;
+        sample = m_filter.tick_rlpf(sample);
+        
+        sample = sample * m_gain * m_adsr.tick();
         
         // interleaved stereo operation
         buffer[i*2] = sample;

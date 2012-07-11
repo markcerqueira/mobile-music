@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "GLViewController.h"
 
 @implementation AppDelegate
 
@@ -23,7 +24,7 @@
     
     // allocate an instance of ViewController that we will show to the user
     // change the class of ViewController HERE if you'd like to use a different view controller
-    self.viewController = [[ViewController alloc] init];
+    self.viewController = [[GLViewController alloc] init];
     
     // set our view controller as the root view controller
     self.window.rootViewController = self.viewController;
