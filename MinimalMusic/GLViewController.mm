@@ -76,6 +76,7 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+    self.view.multipleTouchEnabled = YES;
     
     [EAGLContext setCurrentContext:self.context];
     
