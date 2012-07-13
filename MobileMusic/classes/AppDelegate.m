@@ -14,10 +14,12 @@
 #import "MobileMusicCoreBridge.h"
 #import "AccelerometerHelper.h"
 #import "LocationHelper.h"
-#import "NetworkingExample.h"
 #import "TabBarNubViewController.h"
 #import "MotionHelper.h"
 #import "ProgrammaticViewController.h"
+
+#import "OSCExample.h"
+#import "NetworkingExample.h"
 
 @interface AppDelegate ()
 
@@ -89,7 +91,6 @@
     
     // route touches to the GL view controller
     [self.touchWindow setTouchDelegate:self.GLviewController];
-    
 }
 
 // override point for customization after application launch
@@ -114,7 +115,8 @@
     // example network call that fetches 2 tweets
     [NetworkingExample returnLatestTopTweets:2];
     
-    NSLog(@"HEY MARK, I MADE A CHANGE");
+    // example OSC code that sends an OSC message to yourself
+    [[OSCExample sharedInstance] sendTestOSCmessageToMyself];    
     
     return YES;
 }
