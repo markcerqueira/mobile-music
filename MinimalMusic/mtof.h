@@ -13,7 +13,7 @@
 // name: mtof()
 // desc: midi to freq
 //-----------------------------------------------------------------------------
-static double mtof( double m )
+static double mtof( double f )
 {
     if( f <= -1500 ) return (0);
     else if( f > 1499 ) return (mtof(1499));

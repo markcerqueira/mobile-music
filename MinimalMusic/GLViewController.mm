@@ -11,12 +11,15 @@
 #import "Audio.h"
 #import "Texture.h"
 #import <map>
+#import "mtof.h"
 
 
 struct MarioTouch
 {
     GLuint tex;
     GLvertex2f location;
+    
+    MarioTouchSound * sound;
 };
 
 
@@ -81,7 +84,7 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
     [EAGLContext setCurrentContext:self.context];
     
     glEnable(GL_TEXTURE_2D);
-    tex = loadTexture(@"mario.png");
+    tex = loadTexture(@"flare.png");
     
     m_audio.start();
 }
@@ -159,13 +162,18 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
     squareTexCoords[5] = GLvertex2f(1, 1);
     
     glColorPointer(4, GL_FLOAT, 0, squareColor);
-//    glEnableClientState(GL_COLOR_ARRAY);
-    glDisableClientState(GL_COLOR_ARRAY);
+    glEnableClientState(GL_COLOR_ARRAY);
+    //glDisableClientState(GL_COLOR_ARRAY);
     
     glTexCoordPointer(2, GL_FLOAT, 0, squareTexCoords);
     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     
     glEnable(GL_TEXTURE_2D);
+    glEnable(GL_BLEND);
+    // normal alpha blend
+//    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    // additive blending
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     
     for(std::map<UITouch *,MarioTouch *>::iterator i = m_touches.begin();
         i != m_touches.end(); i++)
@@ -178,6 +186,7 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
         
         glTranslatef(marioTouch->location.x, marioTouch->location.y, 0);
         
+        glDrawArrays(GL_TRIANGLES, 0, 6);
         glDrawArrays(GL_TRIANGLES, 0, 6);
         
         glPopMatrix();
@@ -198,7 +207,22 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
         
         m_touches[touch] = marioTouch;
         
-//        m_audio.keyDown();
+        MarioTouchSound * touchSound = new MarioTouchSound;
+        marioTouch->sound = touchSound;
+        
+        float scale[] = {0, 4, 7, 11};
+        
+        float note = 60 + scale[arc4random()%4]+12*arc4random()%3;
+        touchSound->setFreq(mtof(note));
+        
+        touchSound->m_gain = 0.1;
+        touchSound->m_modGain = 600+v.x*400;
+        touchSound->m_lfoFreq = 2*powf(10,v.y);
+        touchSound->m_adsr.keyOn();
+        
+        m_audio.m_addList->put(touchSound);
+        
+        m_audio.keyDown();
     }
 }
 
@@ -214,8 +238,10 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
         
         marioTouch->location = v;
         
-//        m_audio.m_freq = 400+v.x*200;
-//        m_audio.m_lfoFreq = 2*powf(10,v.y);
+        MarioTouchSound * touchSound = marioTouch->sound;
+        
+        touchSound->m_modGain = 600+v.x*400;
+        touchSound->m_lfoFreq = 2*powf(10,v.y);
     }
 }
 
@@ -227,9 +253,12 @@ GLvertex2f uiview2gl(CGPoint p, UIView * view)
         GLvertex2f v = uiview2gl(p, self.view);
         m_touchLocation = v;
         
+        MarioTouch * marioTouch = m_touches[touch];
+        m_audio.m_removeList->put(marioTouch->sound);
+        
         m_touches.erase(touch);
         
-//        m_audio.keyUp();
+        m_audio.keyUp();
     }
 }
 

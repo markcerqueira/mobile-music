@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091E92FB15AFAF6100762778 /* flare.png in Resources */ = {isa = PBXBuildFile; fileRef = 091E92FA15AFAF6100762778 /* flare.png */; };
+		091E92FF15AFB4F900762778 /* snare-hop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 091E92FE15AFB4F900762778 /* snare-hop.wav */; };
 		094567BC15A67E1A0054F83F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094567BB15A67E190054F83F /* UIKit.framework */; };
 		094567BE15A67E1A0054F83F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094567BD15A67E1A0054F83F /* Foundation.framework */; };
 		094567C015A67E1A0054F83F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094567BF15A67E1A0054F83F /* CoreGraphics.framework */; };
@@ -37,6 +39,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		091E92FA15AFAF6100762778 /* flare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flare.png; sourceTree = "<group>"; };
+		091E92FD15AFB47C00762778 /* Filepaths.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Filepaths.h; sourceTree = "<group>"; };
+		091E92FE15AFB4F900762778 /* snare-hop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "snare-hop.wav"; sourceTree = "<group>"; };
+		091E930015AFBA0800762778 /* CircularBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircularBuffer.h; sourceTree = "<group>"; };
 		094567B715A67E190054F83F /* MinimalMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		094567BB15A67E190054F83F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		094567BD15A67E1A0054F83F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -236,6 +242,10 @@
 		094567C115A67E1A0054F83F /* MinimalMusic */ = {
 			isa = PBXGroup;
 			children = (
+				091E930015AFBA0800762778 /* CircularBuffer.h */,
+				091E92FE15AFB4F900762778 /* snare-hop.wav */,
+				091E92FD15AFB47C00762778 /* Filepaths.h */,
+				091E92FA15AFAF6100762778 /* flare.png */,
 				095AB6B615AD2E27007989AD /* mario.png */,
 				095AB6B315AD2AA4007989AD /* Texture.h */,
 				095AB6B415AD2AA4007989AD /* Texture.mm */,
@@ -462,6 +472,8 @@
 				095AB6AE15AD1AED007989AD /* SKINI.tbl in Resources */,
 				095AB6B215AD2A32007989AD /* thumb.png in Resources */,
 				095AB6B715AD2E27007989AD /* mario.png in Resources */,
+				091E92FB15AFAF6100762778 /* flare.png in Resources */,
+				091E92FF15AFB4F900762778 /* snare-hop.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
