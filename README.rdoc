@@ -11,7 +11,3 @@ Also included is a workspace, MusicWorkspace.xcworkspace, that includes referenc
 == GETTING STARTED
 1. Clone (or fork and clone) this repository and open up the desired project/workspace in Xcode.
 2. Compile and run on the iOS simulator or you iOS device.
-
-== MORE INFO
-
-== CONTRIBUTE
